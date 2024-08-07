@@ -17,7 +17,7 @@ public class ShipTranslate : MonoBehaviour
 
     void Start()
     {
-        // Optionnel : Vous pouvez définir les limites ici ou dans l'inspecteur Unity
+ 
     }
 
     void Update()
