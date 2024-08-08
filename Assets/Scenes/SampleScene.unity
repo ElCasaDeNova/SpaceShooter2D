@@ -839,6 +839,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2850292140067045037, guid: 69af5ef9076beb5478f7d4e59a359de1, type: 3}
+      propertyPath: bulletSpeed
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2850292140067045037, guid: 69af5ef9076beb5478f7d4e59a359de1, type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 1448417955098605964, guid: 5fcab481947f13f4eb53a1ceaa14fb40, type: 3}
+    - target: {fileID: 2850292140067045037, guid: 69af5ef9076beb5478f7d4e59a359de1, type: 3}
+      propertyPath: fireInterval
+      value: 0.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 2850292140067045037, guid: 69af5ef9076beb5478f7d4e59a359de1, type: 3}
+      propertyPath: messageInterval
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2850292140067045037, guid: 69af5ef9076beb5478f7d4e59a359de1, type: 3}
+      propertyPath: shootingInterval
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 8079297082724316504, guid: 69af5ef9076beb5478f7d4e59a359de1, type: 3}
       propertyPath: mapBorderBL
       value: 
