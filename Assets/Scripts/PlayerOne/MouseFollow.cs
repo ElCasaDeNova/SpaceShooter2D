@@ -14,10 +14,13 @@ public class SpaceshipController : MonoBehaviour
 
     void Update()
     {
+#if UNITY_EDITOR
+
         if (Cursor.visible)
         {
             Cursor.visible = false;
         }
+#endif
 
         // Get mouse position from world point
         mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -27,7 +30,7 @@ public class SpaceshipController : MonoBehaviour
 
         // Apply rotation
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle - 90)); // Soustraire 90 degr�s car le vaisseau pointe par d�faut vers le haut
+        transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle - 90)); // Subtract 90 degres because of player spawned direction
     }
 
     // Used for GUI
@@ -37,7 +40,7 @@ public class SpaceshipController : MonoBehaviour
         if (cursorTexture != null)
         {
             Vector3 cursorPos = Input.mousePosition;
-            cursorPos.y = Screen.height - cursorPos.y; // Inverser l'axe Y
+            cursorPos.y = Screen.height - cursorPos.y; // Inverse axe Y
             GUI.DrawTexture(new Rect(cursorPos.x - cursorTexture.width / 2, cursorPos.y - cursorTexture.height / 2, cursorTexture.width, cursorTexture.height), cursorTexture);
         }
     }
