@@ -15,11 +15,6 @@ public class ShipTranslate : MonoBehaviour
     [SerializeField]
     public Transform mapBorderTR;
 
-    void Start()
-    {
- 
-    }
-
     void Update()
     {
         // Calculate movements

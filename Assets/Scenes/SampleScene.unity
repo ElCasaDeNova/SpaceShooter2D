@@ -333,6 +333,11 @@ Transform:
   - {fileID: 128807422}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &738366266 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2448374912805253289, guid: 69af5ef9076beb5478f7d4e59a359de1, type: 3}
+  m_PrefabInstance: {fileID: 6892797498573217802}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &819422528 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1938376419010059253, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
@@ -870,6 +875,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2448374912805253289, guid: 69af5ef9076beb5478f7d4e59a359de1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.322
+      objectReference: {fileID: 0}
     - target: {fileID: 2850292140067045037, guid: 69af5ef9076beb5478f7d4e59a359de1, type: 3}
       propertyPath: parentRoot
       value: 
@@ -886,6 +895,10 @@ PrefabInstance:
       propertyPath: fireInterval
       value: 0.08
       objectReference: {fileID: 0}
+    - target: {fileID: 2850292140067045037, guid: 69af5ef9076beb5478f7d4e59a359de1, type: 3}
+      propertyPath: bulletSpawner
+      value: 
+      objectReference: {fileID: 738366266}
     - target: {fileID: 2850292140067045037, guid: 69af5ef9076beb5478f7d4e59a359de1, type: 3}
       propertyPath: messageInterval
       value: 0.2
