@@ -8,6 +8,9 @@ public class Shoot : MonoBehaviour
 
     private float timeSinceLastFire;
 
+    [SerializeField]
+    private Transform parentRoot;
+
     void Update()
     {
         timeSinceLastFire += Time.deltaTime;
@@ -23,6 +26,8 @@ public class Shoot : MonoBehaviour
     {
         GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+
+        bullet.transform.SetParent(parentRoot);
 
         if (rb == null)
         {
