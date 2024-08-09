@@ -14,6 +14,11 @@ public class SpaceshipController : MonoBehaviour
 
     void Update()
     {
+        if (Cursor.visible)
+        {
+            Cursor.visible = false;
+        }
+
         // Get mouse position from world point
         mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
