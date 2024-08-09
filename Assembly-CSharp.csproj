@@ -62,7 +62,9 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\PlayerOne\MovementControls.cs" />
     <Compile Include="Assets\Scripts\PlayerOne\MouseFollow.cs" />
+    <Compile Include="Assets\Scripts\Bullet\BulletCollisionHandler.cs" />
     <Compile Include="Assets\Scripts\Enemy\FollowPlayerOne.cs" />
+    <Compile Include="Assets\Scripts\Bullet\deleteBullet.cs" />
     <Compile Include="Assets\Scripts\PlayerOne\Shoot.cs" />
     <Compile Include="Assets\Scripts\Camera\FollowPlayerOne.cs" />
   </ItemGroup>
