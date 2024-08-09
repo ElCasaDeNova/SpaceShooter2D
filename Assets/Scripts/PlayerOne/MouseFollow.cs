@@ -2,33 +2,33 @@ using UnityEngine;
 
 public class SpaceshipController : MonoBehaviour
 {
-    public Texture2D cursorTexture; // Texture pour le viseur personnalisé
+    public Texture2D cursorTexture;
 
     private Vector3 mousePosition;
 
     void Start()
     {
-        // Masquer le curseur système
+        // Hide System cursor
         Cursor.visible = false;
     }
 
     void Update()
     {
-        // Récupérer la position de la souris en coordonnées du monde
+        // Get mouse position from world point
         mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        // Calculer la direction du vaisseau vers la souris
+        // Calculate direction from player to mouse position
         Vector3 direction = (mousePosition - transform.position).normalized;
 
-        // Appliquer la rotation en fonction de la direction
+        // Apply rotation
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle - 90)); // Soustraire 90 degrés car le vaisseau pointe par défaut vers le haut
+        transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle - 90)); // Soustraire 90 degrï¿½s car le vaisseau pointe par dï¿½faut vers le haut
     }
 
-    // S'applique à la GUI
+    // Used for GUI
     void OnGUI()
     {
-        // Afficher le viseur personnalisé à la position de la souris
+        // Apply Cursor texture on mouse position
         if (cursorTexture != null)
         {
             Vector3 cursorPos = Input.mousePosition;
