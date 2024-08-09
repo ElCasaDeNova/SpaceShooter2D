@@ -9,7 +9,7 @@ public class ShipTranslate : MonoBehaviour
 
     public float speed;
 
-    // Définir les limites de la Carte 
+    // Define Map Borders
     [SerializeField]
     public Transform mapBorderBL;
     [SerializeField]
@@ -22,19 +22,19 @@ public class ShipTranslate : MonoBehaviour
 
     void Update()
     {
-        // Calculer le mouvement
+        // Calculate movements
         float moveX = Input.GetAxisRaw("Horizontal");
         float moveY = Input.GetAxisRaw("Vertical");
 
-        // Déplacement du personnage
+        // Move the player
         Vector3 move = new Vector3(moveX, moveY, 0) * speed * Time.deltaTime;
         Vector3 newPosition = transform.position + move;
 
-        // Limiter la position
+        // Limit the position
         newPosition.x = Mathf.Clamp(newPosition.x, mapBorderBL.position.x, mapBorderTR.position.x);
         newPosition.y = Mathf.Clamp(newPosition.y, mapBorderBL.position.y, mapBorderTR.position.y);
 
-        // Appliquer la nouvelle position
+        // Apply new position
         transform.position = newPosition;
     }
 }

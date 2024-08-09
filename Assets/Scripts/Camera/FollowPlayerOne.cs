@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    public Transform target; // Le vaisseau que la caméra doit suivre
-    public float smoothSpeed = 0.125f; // Vitesse de lissage du mouvement avec valeur par défaut
-    public Vector3 offset; // Décalage de la caméra par rapport au vaisseau
+    public Transform target; // The following Ship
+    public float smoothSpeed = 0.125f;
+    public Vector3 offset; // Gap between Cam and Player speed
 
-    // Définir les limites de la carte pour la caméra
+    // Define Map Borders
     public Transform topRightLimit;
     public Transform bottomLeftLimit;
 
@@ -14,27 +14,26 @@ public class CameraFollow : MonoBehaviour
 
     void Start()
     {
-        // Obtenir la caméra
         cam = GetComponent<Camera>();
     }
 
     void LateUpdate()
     {
-        // Calculer la position désirée
+        // Calculate desired position
         Vector3 desiredPosition = target.position + offset;
 
-        // Calculer la taille de la vue de la caméra
-        float camHeight = 2f * cam.orthographicSize; // La hauteur de la caméra
-        float camWidth = camHeight * cam.aspect; // La largeur de la caméra
+        // Calculate Height and Width of the camera
+        float camHeight = 2f * cam.orthographicSize;
+        float camWidth = camHeight * cam.aspect; 
 
-        // Limiter la position de la caméra en tenant compte de la taille de la caméra
+        // Limit the Camera position based on its height, width and the Map borders
         desiredPosition.x = Mathf.Clamp(desiredPosition.x, bottomLeftLimit.position.x + camWidth / 2, topRightLimit.position.x - camWidth / 2);
         desiredPosition.y = Mathf.Clamp(desiredPosition.y, bottomLeftLimit.position.y + camHeight / 2, topRightLimit.position.y - camHeight / 2);
 
-        // Lissage du mouvement pour éviter des secousses
+        // Smoothing the movement to avoid shaking
         Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
 
-        // Appliquer la position lissée à la caméra
+        // Apply smooth movements
         transform.position = smoothedPosition;
     }
 }
