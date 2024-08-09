@@ -6,6 +6,9 @@ public class Shoot : MonoBehaviour
     public float bulletSpeed = 10f; // The speed of the bullet
     public float fireInterval = 0.5f; // Time in seconds between each shot
 
+    [SerializeField]
+    private Transform bulletSpawner;
+
     private float timeSinceLastFire;
 
     [SerializeField]
@@ -24,7 +27,7 @@ public class Shoot : MonoBehaviour
 
     void ShootBullet()
     {
-        GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+        GameObject bullet = Instantiate(bulletPrefab, bulletSpawner.position, Quaternion.identity);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
 
         bullet.transform.SetParent(parentRoot);
@@ -35,7 +38,7 @@ public class Shoot : MonoBehaviour
         }
 
         Vector2 direction = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized;
-        rb.velocity = direction * bulletSpeed;
+        rb.velocity = transform.up * bulletSpeed;
 
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f; // Adjust for sprite orientation
         bullet.transform.rotation = Quaternion.Euler(0, 0, angle);
