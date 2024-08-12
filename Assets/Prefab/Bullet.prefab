@@ -142,6 +142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 1448417955098605964}
+  damage: 10
 --- !u!58 &6990771331510878297
 CircleCollider2D:
   m_ObjectHideFlags: 0

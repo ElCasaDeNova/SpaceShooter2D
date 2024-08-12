@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1938376419010059253}
   - component: {fileID: 5242376895044080729}
   - component: {fileID: 1614129669606699627}
+  - component: {fileID: 3972344631159476264}
   - component: {fileID: 4609932947752601880}
   - component: {fileID: 1597990012749431289}
   m_Layer: 0
@@ -101,6 +102,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTransform: {fileID: 1938376419010059253}
   playerOne: {fileID: 0}
+--- !u!114 &3972344631159476264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3559592047556723026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77409c53e454ed34bb79bb93382e65c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
 --- !u!50 &4609932947752601880
 Rigidbody2D:
   serializedVersion: 4
@@ -162,4 +176,4 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.00000011920929}
   serializedVersion: 2
-  m_Radius: 0.25
+  m_Radius: 0.18
