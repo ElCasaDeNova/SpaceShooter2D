@@ -60,13 +60,14 @@
     <Analyzer Include="E:\Formation\2022.3.40f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\PlayerOne\MovementControls.cs" />
-    <Compile Include="Assets\Scripts\PlayerOne\MouseFollow.cs" />
+    <Compile Include="Assets\Scripts\PlayerOne\PlayerOneShoot.cs" />
+    <Compile Include="Assets\Scripts\Enemy\EnemyHealth.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\Bullet\BulletCollisionHandler.cs" />
-    <Compile Include="Assets\Scripts\Enemy\FollowPlayerOne.cs" />
     <Compile Include="Assets\Scripts\Bullet\deleteBullet.cs" />
-    <Compile Include="Assets\Scripts\PlayerOne\Shoot.cs" />
+    <Compile Include="Assets\Scripts\Enemy\EnemyFollow.cs" />
+    <Compile Include="Assets\Scripts\PlayerOne\PlayerOneMovementControls.cs" />
+    <Compile Include="Assets\Scripts\PlayerOne\PlayerOneMouseFollow.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

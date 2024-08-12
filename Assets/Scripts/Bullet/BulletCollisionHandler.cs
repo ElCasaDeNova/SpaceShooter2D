@@ -1,23 +1,20 @@
 using UnityEngine;
 
-public class CollidingScript : MonoBehaviour
+public class BulletCollisionHandler : MonoBehaviour
 {
     [SerializeField]
     private GameObject bullet;
 
-    private string playerTag = "Player";
+    public float damage;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        // Check if the object in collision has the player's tag
-        /*if (other.CompareTag(playerTag))
+        // Check if the other object has a Health component
+        if (other.gameObject.TryGetComponent<EnemyHealth>(out EnemyHealth enemy))
         {
-            // If it's the player's ship, do nothing
-            return;
-        }*/
-
-        // deal with collision
-        Debug.Log("Collision Trigger with " + other.gameObject.name); //Will later deal with damage when set
+            // Now you can interact with the Health component
+            enemy.TakeDamage(damage); // Example of dealing damage
+        }
 
         //Delete the bullet
         Destroy(bullet);
