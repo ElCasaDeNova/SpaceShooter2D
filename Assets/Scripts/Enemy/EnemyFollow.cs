@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FollowPlayerOne : MonoBehaviour
+public class EnemyFollow : MonoBehaviour
 {
     [SerializeField]
     private Transform myTransform;

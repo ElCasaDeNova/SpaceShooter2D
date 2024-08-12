@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class SpaceshipController : MonoBehaviour
+public class PlayerOneMouseFollow : MonoBehaviour
 {
     public Texture2D cursorTexture;
 

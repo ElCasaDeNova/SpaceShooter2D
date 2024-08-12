@@ -1,10 +1,15 @@
 using UnityEngine;
 
-public class Shoot : MonoBehaviour
+public class PlayerOneShoot : MonoBehaviour
 {
-    public GameObject bulletPrefab; // The prefab of the bullet to instantiate
-    public float bulletSpeed = 10f; // The speed of the bullet
-    public float fireInterval = 0.5f; // Time in seconds between each shot
+    [SerializeField]
+    private GameObject bulletPrefab; // The prefab of the bullet to instantiate
+
+    [SerializeField]
+    private float bulletSpeed = 10f; // The speed of the bullet
+
+    [SerializeField]
+    private float fireInterval = 0.5f; // Time in seconds between each shot
 
     [SerializeField]
     private Transform bulletSpawner;
