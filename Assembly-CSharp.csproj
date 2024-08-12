@@ -66,7 +66,9 @@
     <Compile Include="Assets\Scripts\Bullet\BulletCollisionHandler.cs" />
     <Compile Include="Assets\Scripts\Bullet\deleteBullet.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyFollow.cs" />
+    <Compile Include="Assets\Scripts\PlayerOne\PlayerOneHealth.cs" />
     <Compile Include="Assets\Scripts\PlayerOne\PlayerOneMovementControls.cs" />
+    <Compile Include="Assets\Scripts\Enemy\EnemyShoot.cs" />
     <Compile Include="Assets\Scripts\PlayerOne\PlayerOneMouseFollow.cs" />
   </ItemGroup>
   <ItemGroup>

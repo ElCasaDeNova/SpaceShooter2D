@@ -148,7 +148,7 @@ Transform:
   m_GameObject: {fileID: 128807421}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -37.8, y: -29.7, z: 18.969257}
+  m_LocalPosition: {x: -41.8, y: -36.8, z: 18.969257}
   m_LocalScale: {x: 0.92929, y: 0.92929, z: 0.92929}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -338,6 +338,29 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1938376419010059253, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
   m_PrefabInstance: {fileID: 1967100835}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &880483348 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 40897359713127839, guid: 69af5ef9076beb5478f7d4e59a359de1, type: 3}
+  m_PrefabInstance: {fileID: 6892797498573217802}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &880483355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 880483348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e9e054edb207b54298c1a80e30e2704, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+--- !u!20 &981596639 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 1670119154087429299, guid: 8f1cbcfe2eddb7f4486db0be13949548, type: 3}
+  m_PrefabInstance: {fileID: 3412824311676989991}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &994433445
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -352,11 +375,11 @@ PrefabInstance:
       objectReference: {fileID: 649539075}
     - target: {fileID: 1938376419010059253, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 15
+      value: -19.8
       objectReference: {fileID: 0}
     - target: {fileID: 1938376419010059253, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5
+      value: -12.7
       objectReference: {fileID: 0}
     - target: {fileID: 1938376419010059253, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
       propertyPath: m_LocalPosition.z
@@ -394,6 +417,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyCruiser 4
       objectReference: {fileID: 0}
+    - target: {fileID: 6274513452741593257, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
+      propertyPath: playerOne
+      value: 
+      objectReference: {fileID: 649539075}
+    - target: {fileID: 6274513452741593257, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 981596639}
+    - target: {fileID: 6274513452741593257, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
+      propertyPath: parentRoot
+      value: 
+      objectReference: {fileID: 2032146501}
+    - target: {fileID: 6274513452741593257, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
+      propertyPath: numberOfBullets
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -413,11 +452,11 @@ PrefabInstance:
       objectReference: {fileID: 649539075}
     - target: {fileID: 1938376419010059253, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 15
+      value: 21.2
       objectReference: {fileID: 0}
     - target: {fileID: 1938376419010059253, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -9
+      value: -13.3
       objectReference: {fileID: 0}
     - target: {fileID: 1938376419010059253, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
       propertyPath: m_LocalPosition.z
@@ -454,6 +493,22 @@ PrefabInstance:
     - target: {fileID: 3559592047556723026, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
       propertyPath: m_Name
       value: EnemyCruiser 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6274513452741593257, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
+      propertyPath: playerOne
+      value: 
+      objectReference: {fileID: 649539075}
+    - target: {fileID: 6274513452741593257, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 981596639}
+    - target: {fileID: 6274513452741593257, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
+      propertyPath: parentRoot
+      value: 
+      objectReference: {fileID: 2032146501}
+    - target: {fileID: 6274513452741593257, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
+      propertyPath: numberOfBullets
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -526,7 +581,7 @@ Transform:
   m_GameObject: {fileID: 1529329203}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 22.3, y: 10.4, z: 18.969257}
+  m_LocalPosition: {x: 28.1, y: 12.5, z: 18.969257}
   m_LocalScale: {x: 0.92929, y: 0.92929, z: 0.92929}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -671,11 +726,11 @@ PrefabInstance:
       objectReference: {fileID: 649539075}
     - target: {fileID: 1938376419010059253, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -14
+      value: 21.9
       objectReference: {fileID: 0}
     - target: {fileID: 1938376419010059253, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -9
+      value: 9.2
       objectReference: {fileID: 0}
     - target: {fileID: 1938376419010059253, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
       propertyPath: m_LocalPosition.z
@@ -712,6 +767,22 @@ PrefabInstance:
     - target: {fileID: 3559592047556723026, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
       propertyPath: m_Name
       value: EnemyCruiser 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6274513452741593257, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
+      propertyPath: playerOne
+      value: 
+      objectReference: {fileID: 649539075}
+    - target: {fileID: 6274513452741593257, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 981596639}
+    - target: {fileID: 6274513452741593257, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
+      propertyPath: parentRoot
+      value: 
+      objectReference: {fileID: 2032146501}
+    - target: {fileID: 6274513452741593257, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
+      propertyPath: numberOfBullets
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -757,10 +828,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1670119154087429299, guid: 8f1cbcfe2eddb7f4486db0be13949548, type: 3}
+      propertyPath: orthographic size
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 3314684594303236604, guid: 8f1cbcfe2eddb7f4486db0be13949548, type: 3}
       propertyPath: target
       value: 
       objectReference: {fileID: 649539075}
+    - target: {fileID: 3314684594303236604, guid: 8f1cbcfe2eddb7f4486db0be13949548, type: 3}
+      propertyPath: smoothSpeed
+      value: 0.02
+      objectReference: {fileID: 0}
     - target: {fileID: 3314684594303236604, guid: 8f1cbcfe2eddb7f4486db0be13949548, type: 3}
       propertyPath: topRightLimit
       value: 
@@ -772,6 +851,14 @@ PrefabInstance:
     - target: {fileID: 3332396176598608625, guid: 8f1cbcfe2eddb7f4486db0be13949548, type: 3}
       propertyPath: m_Name
       value: Main Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 8998029541467318855, guid: 8f1cbcfe2eddb7f4486db0be13949548, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8998029541467318855, guid: 8f1cbcfe2eddb7f4486db0be13949548, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8998029541467318855, guid: 8f1cbcfe2eddb7f4486db0be13949548, type: 3}
       propertyPath: m_LocalPosition.x
@@ -885,7 +972,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 40897359713127839, guid: 69af5ef9076beb5478f7d4e59a359de1, type: 3}
+      insertIndex: 5
+      addedObject: {fileID: 880483355}
   m_SourcePrefab: {fileID: 100100000, guid: 69af5ef9076beb5478f7d4e59a359de1, type: 3}
 --- !u!1001 &7150950766151834985
 PrefabInstance:
@@ -900,20 +990,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 649539075}
     - target: {fileID: 1938376419010059253, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1938376419010059253, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1938376419010059253, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -14
+      value: -20.4
       objectReference: {fileID: 0}
     - target: {fileID: 1938376419010059253, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5
+      value: 8.9
       objectReference: {fileID: 0}
     - target: {fileID: 1938376419010059253, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
       propertyPath: m_LocalPosition.z
@@ -951,9 +1033,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyCruiser 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3972344631159476264, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
-      propertyPath: maxHealth
-      value: 100
+    - target: {fileID: 6274513452741593257, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
+      propertyPath: playerOne
+      value: 
+      objectReference: {fileID: 649539075}
+    - target: {fileID: 6274513452741593257, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 981596639}
+    - target: {fileID: 6274513452741593257, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
+      propertyPath: parentRoot
+      value: 
+      objectReference: {fileID: 2032146501}
+    - target: {fileID: 6274513452741593257, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
+      propertyPath: numberOfBullets
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

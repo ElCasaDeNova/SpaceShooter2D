@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3972344631159476264}
   - component: {fileID: 4609932947752601880}
   - component: {fileID: 1597990012749431289}
+  - component: {fileID: 6274513452741593257}
   m_Layer: 0
   m_Name: EnemyCruiser
   m_TagString: Enemy
@@ -33,7 +34,8 @@ Transform:
   m_LocalPosition: {x: -14.17, y: 6.49, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 6383588975946869488}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5242376895044080729
@@ -114,7 +116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77409c53e454ed34bb79bb93382e65c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 1000
 --- !u!50 &4609932947752601880
 Rigidbody2D:
   serializedVersion: 4
@@ -177,3 +179,55 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.00000011920929}
   serializedVersion: 2
   m_Radius: 0.18
+--- !u!114 &6274513452741593257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3559592047556723026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3e4dd1c866453f42a1b82f5bd3c9a87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 1938376419010059253}
+  playerOne: {fileID: 0}
+  bulletPrefab: {fileID: 1448417955098605964, guid: 5fcab481947f13f4eb53a1ceaa14fb40, type: 3}
+  bulletSpeed: 5
+  fireInterval: 1.5
+  bulletSpawner: {fileID: 6383588975946869488}
+  numberOfBullets: 3
+  spreadAngle: 40
+  parentRoot: {fileID: 0}
+--- !u!1 &3958715817878047975
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6383588975946869488}
+  m_Layer: 0
+  m_Name: BulletSpawnerCruiser1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6383588975946869488
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3958715817878047975}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.361, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1938376419010059253}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
