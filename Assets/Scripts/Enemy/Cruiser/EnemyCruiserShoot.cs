@@ -46,6 +46,7 @@ public class EnemyShoot : MonoBehaviour
     {
         timeSinceLastFire += Time.deltaTime;
 
+        // Enemy shoot if in Camera Range
         if (IsVisibleToCamera(mainCamera) && timeSinceLastFire >= fireInterval)
         {
             timeSinceLastFire = 0f;
