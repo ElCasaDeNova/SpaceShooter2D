@@ -62,13 +62,14 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\PlayerOne\PlayerOneShoot.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyHealth.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Cruiser\EnemyCruiserShoot.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraFollow.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Mine\EnemyMineExplose.cs" />
     <Compile Include="Assets\Scripts\Bullet\BulletCollisionHandler.cs" />
     <Compile Include="Assets\Scripts\Bullet\deleteBullet.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyFollow.cs" />
     <Compile Include="Assets\Scripts\PlayerOne\PlayerOneHealth.cs" />
     <Compile Include="Assets\Scripts\PlayerOne\PlayerOneMovementControls.cs" />
-    <Compile Include="Assets\Scripts\Enemy\EnemyShoot.cs" />
     <Compile Include="Assets\Scripts\PlayerOne\PlayerOneMouseFollow.cs" />
   </ItemGroup>
   <ItemGroup>
