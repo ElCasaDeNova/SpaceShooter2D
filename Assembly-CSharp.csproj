@@ -71,8 +71,10 @@
     <Compile Include="Assets\Scripts\Bullet\deleteBullet.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyFollow.cs" />
     <Compile Include="Assets\Scripts\PlayerOne\PlayerOneHealth.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Spawners\ScriptSpawnersManagement.cs" />
     <Compile Include="Assets\Scripts\PlayerOne\PlayerOneMovementControls.cs" />
     <Compile Include="Assets\Scripts\PlayerOne\PlayerOneMouseFollow.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Cruiser\EnemyCruiserHealth.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

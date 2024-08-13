@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8079297082724316504}
   - component: {fileID: 6754056205681287324}
   - component: {fileID: 2850292140067045037}
+  - component: {fileID: 3017013977261716302}
   - component: {fileID: 5654704740198475297}
   - component: {fileID: 3858911668494316665}
   m_Layer: 0
@@ -32,7 +33,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -5}
-  m_LocalScale: {x: 3, y: 3, z: 5}
+  m_LocalScale: {x: 4, y: 4, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2448374912805253289}
@@ -79,7 +80,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -1614914883, guid: 76a619767c2ae8841a108f87065d5a00, type: 3}
+  m_Sprite: {fileID: 1360286758, guid: 76a619767c2ae8841a108f87065d5a00, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -104,6 +105,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTransform: {fileID: 816052848135715565}
   speed: 15
+  dashSpeed: 30
+  dashDuration: 0.5
   mapBorderBL: {fileID: 0}
   mapBorderTR: {fileID: 0}
 --- !u!114 &6754056205681287324
@@ -136,6 +139,19 @@ MonoBehaviour:
   fireInterval: 0.08
   bulletSpawner: {fileID: 2448374912805253289}
   parentRoot: {fileID: 0}
+--- !u!114 &3017013977261716302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 40897359713127839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e9e054edb207b54298c1a80e30e2704, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
 --- !u!50 &5654704740198475297
 Rigidbody2D:
   serializedVersion: 4

@@ -17,6 +17,13 @@ public class BulletCollisionHandler : MonoBehaviour
             Destroy(bullet);
         }
 
+        // If EnemyCruiser is touched
+        if (other.gameObject.TryGetComponent<EnemyCruiserHealth>(out EnemyCruiserHealth enemyCruiser))
+        {
+            enemyCruiser.TakeDamage(damage);
+            Destroy(bullet);
+        }
+
         // If Player is touched
         if (other.gameObject.TryGetComponent<PlayerOneHealth>(out PlayerOneHealth player))
         {

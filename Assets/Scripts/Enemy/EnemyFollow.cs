@@ -7,8 +7,7 @@ public class EnemyFollow : MonoBehaviour
     [SerializeField]
     private Transform myTransform;
 
-    [SerializeField]
-    private Transform playerOne;
+    public Transform playerOne;
 
     private Vector3 playerPosition;
 

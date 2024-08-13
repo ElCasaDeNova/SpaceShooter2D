@@ -18,8 +18,7 @@ public class EnemyShipShoot : MonoBehaviour
 
     private float timeSinceLastFire;
 
-    [SerializeField]
-    private Transform parentRoot;
+    public Transform parentRoot;
 
     void Update()
     {

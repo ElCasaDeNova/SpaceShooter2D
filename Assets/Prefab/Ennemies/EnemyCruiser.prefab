@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 1938376419010059253}
   - component: {fileID: 5242376895044080729}
   - component: {fileID: 1614129669606699627}
-  - component: {fileID: 3972344631159476264}
   - component: {fileID: 4609932947752601880}
   - component: {fileID: 1597990012749431289}
   - component: {fileID: 6274513452741593257}
+  - component: {fileID: 4526935656596338704}
   m_Layer: 0
   m_Name: EnemyCruiser
   m_TagString: Enemy
@@ -104,19 +104,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTransform: {fileID: 1938376419010059253}
   playerOne: {fileID: 0}
---- !u!114 &3972344631159476264
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3559592047556723026}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77409c53e454ed34bb79bb93382e65c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 1000
 --- !u!50 &4609932947752601880
 Rigidbody2D:
   serializedVersion: 4
@@ -200,6 +187,25 @@ MonoBehaviour:
   numberOfBullets: 3
   spreadAngle: 40
   parentRoot: {fileID: 0}
+--- !u!114 &4526935656596338704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3559592047556723026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a5b31fae79e631488f684d75a58762f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  shipPrefab: {fileID: 5966500824460191478, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+  spawnPoints: []
+  baseNumberOfShipsToSpawn: 1
+  spawnersManager: {fileID: 0}
+  playerOne: {fileID: 0}
+  shipParentRoot: {fileID: 0}
 --- !u!1 &3958715817878047975
 GameObject:
   m_ObjectHideFlags: 0
