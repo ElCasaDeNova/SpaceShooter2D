@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8079297082724316504}
   - component: {fileID: 6754056205681287324}
   - component: {fileID: 2850292140067045037}
+  - component: {fileID: 3017013977261716302}
   - component: {fileID: 5654704740198475297}
   - component: {fileID: 3858911668494316665}
   m_Layer: 0
@@ -32,9 +33,10 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -5}
-  m_LocalScale: {x: 3, y: 3, z: 5}
+  m_LocalScale: {x: 4, y: 4, z: 5}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 2448374912805253289}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7590768082113754330
@@ -78,7 +80,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -1614914883, guid: 76a619767c2ae8841a108f87065d5a00, type: 3}
+  m_Sprite: {fileID: 1360286758, guid: 76a619767c2ae8841a108f87065d5a00, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -103,6 +105,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTransform: {fileID: 816052848135715565}
   speed: 15
+  dashSpeed: 30
+  dashDuration: 0.5
   mapBorderBL: {fileID: 0}
   mapBorderTR: {fileID: 0}
 --- !u!114 &6754056205681287324
@@ -130,10 +134,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 189090656fa4cd84a803b856cddb6fb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 0}
-  bulletSpeed: 10
-  fireInterval: 0.5
+  bulletPrefab: {fileID: 1448417955098605964, guid: 5fcab481947f13f4eb53a1ceaa14fb40, type: 3}
+  bulletSpeed: 30
+  fireInterval: 0.08
+  bulletSpawner: {fileID: 2448374912805253289}
   parentRoot: {fileID: 0}
+--- !u!114 &3017013977261716302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 40897359713127839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e9e054edb207b54298c1a80e30e2704, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
 --- !u!50 &5654704740198475297
 Rigidbody2D:
   serializedVersion: 4
@@ -193,6 +211,37 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.05}
   serializedVersion: 2
-  m_Radius: 0.25
+  m_Radius: 0.15
+--- !u!1 &1915899497701232434
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2448374912805253289}
+  m_Layer: 0
+  m_Name: bulletSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2448374912805253289
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1915899497701232434}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.322, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 816052848135715565}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

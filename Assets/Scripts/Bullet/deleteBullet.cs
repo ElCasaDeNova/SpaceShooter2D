@@ -2,29 +2,32 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class deleteBullet : MonoBehaviour
+public class DeleteBullet : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject bullet;
+    private Camera mainCamera;
+    private Renderer bulletRenderer;
 
-    public float bulletLifeTime;
-
-    private float timeSinceShoot;
-
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-
+        // Find the main camera in the scene
+        mainCamera = Camera.main;
+        // Get the Renderer component from this bullet
+        bulletRenderer = GetComponent<Renderer>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        timeSinceShoot += Time.deltaTime;
-
-        if (timeSinceShoot >= bulletLifeTime)
+        if (IsInvisibleToCamera(mainCamera))
         {
-            Destroy(bullet);
+            Destroy(gameObject); // Destroy the bullet itself
         }
+    }
+
+    private bool IsInvisibleToCamera(Camera camera)
+    {
+        // Calculate the camera's frustum planes
+        Plane[] planes = GeometryUtility.CalculateFrustumPlanes(camera);
+        // Test if the object's bounds are outside the frustum planes
+        return !GeometryUtility.TestPlanesAABB(planes, bulletRenderer.bounds);
     }
 }
