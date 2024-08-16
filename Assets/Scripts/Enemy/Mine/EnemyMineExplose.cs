@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyMineExplose : MonoBehaviour
@@ -15,7 +13,7 @@ public class EnemyMineExplose : MonoBehaviour
         // If Player collides
         if (other.gameObject.TryGetComponent<PlayerOneHealth>(out PlayerOneHealth player))
         {
-            player.TakeDamage(damage);           
+            player.TakeDamage(damage);
             Destroy(mine);
         }
     }

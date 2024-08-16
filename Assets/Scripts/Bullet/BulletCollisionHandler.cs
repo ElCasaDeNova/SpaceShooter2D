@@ -31,6 +31,6 @@ public class BulletCollisionHandler : MonoBehaviour
             Destroy(bullet);
         }
 
-        
+
     }
 }

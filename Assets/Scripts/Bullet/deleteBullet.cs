@@ -17,6 +17,7 @@ public class DeleteBullet : MonoBehaviour
 
     void Update()
     {
+        // Destroy Bullet if out of vision
         if (IsInvisibleToCamera(mainCamera))
         {
             Destroy(gameObject); // Destroy the bullet itself
