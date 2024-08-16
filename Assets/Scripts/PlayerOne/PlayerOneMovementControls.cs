@@ -11,6 +11,14 @@ public class ShipTranslate : MonoBehaviour
     public float dashDuration; // Duration of the dash
     private float dashTime; // Time remaining before the dash ends
     private bool isDashing; // Indicates if the player is currently dashing
+    private bool hasDashed;
+
+    [SerializeField]
+    private float dashCooldown = 2f;
+    public float DashCooldown { get { return dashCooldown; } }
+
+    private float timeRemaining;
+    public float TimeRemaining { get { return timeRemaining; } }
 
     // Define Map Borders
     [SerializeField]
@@ -20,10 +28,13 @@ public class ShipTranslate : MonoBehaviour
 
     void Update()
     {
-        // Check if the right mouse button is pressed
-        if (Input.GetMouseButtonDown(1) && !isDashing)
+        if (IsReady())
         {
-            StartCoroutine(Dash());
+            // Check if the right mouse button is pressed
+            if (Input.GetMouseButtonDown(1) && !isDashing)
+            {
+                StartCoroutine(Dash());
+            }
         }
 
         // Calculate movements
@@ -48,6 +59,7 @@ public class ShipTranslate : MonoBehaviour
     private IEnumerator Dash()
     {
         isDashing = true;
+        hasDashed = true;
         dashTime = dashDuration;
 
         while (dashTime > 0)
@@ -57,5 +69,20 @@ public class ShipTranslate : MonoBehaviour
         }
 
         isDashing = false;
+    }
+
+    private bool IsReady()
+    {
+        if (timeRemaining > 0 && hasDashed)
+        {
+            timeRemaining -= Time.deltaTime;
+            return false;
+        }
+        else
+        {
+            hasDashed = false;
+            timeRemaining = dashCooldown;
+            return true;
+        }
     }
 }
