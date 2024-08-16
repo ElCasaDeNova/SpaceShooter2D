@@ -28,6 +28,9 @@ public class EnemyCruiserHealth : MonoBehaviour
     [SerializeField]
     private Transform shipParentRoot;
 
+    [SerializeField]
+    private Transform bulletParent;
+
     // Initialize health points
     void Start()
     {
@@ -95,11 +98,14 @@ public class EnemyCruiserHealth : MonoBehaviour
                 enemyFollow.playerOne = playerOne;
             }
 
-            // Assign the playerOne reference to the EnemyFollow script on the ship
+            // Assign the Ship parent to the Ship
+            shipInstance.transform.SetParent(shipParentRoot);
+
+            // Assign the parent to the Ship bullets
             EnemyShipShoot enemyShipShoot = shipInstance.GetComponent<EnemyShipShoot>();
             if (enemyShipShoot != null)
             {
-                enemyShipShoot.parentRoot = shipParentRoot;
+                enemyShipShoot.parentRoot = bulletParent;
             }
         }
     }

@@ -718,6 +718,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5966500824460191478, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
     - target: {fileID: 4526935656596338704, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
+      propertyPath: bulletParent
+      value: 
+      objectReference: {fileID: 2032146501}
+    - target: {fileID: 4526935656596338704, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
       propertyPath: shipParentRoot
       value: 
       objectReference: {fileID: 889960949}
@@ -814,6 +818,10 @@ PrefabInstance:
       propertyPath: shipPrefab
       value: 
       objectReference: {fileID: 5966500824460191478, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+    - target: {fileID: 4526935656596338704, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
+      propertyPath: bulletParent
+      value: 
+      objectReference: {fileID: 2032146501}
     - target: {fileID: 4526935656596338704, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
       propertyPath: shipParentRoot
       value: 
@@ -1472,6 +1480,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5966500824460191478, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
     - target: {fileID: 4526935656596338704, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
+      propertyPath: bulletParent
+      value: 
+      objectReference: {fileID: 2032146501}
+    - target: {fileID: 4526935656596338704, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
       propertyPath: shipParentRoot
       value: 
       objectReference: {fileID: 889960949}
@@ -1806,6 +1818,10 @@ PrefabInstance:
       propertyPath: playerOne
       value: 
       objectReference: {fileID: 649539075}
+    - target: {fileID: 4526935656596338704, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
+      propertyPath: bulletParent
+      value: 
+      objectReference: {fileID: 2032146501}
     - target: {fileID: 4526935656596338704, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
       propertyPath: shipParentRoot
       value: 
