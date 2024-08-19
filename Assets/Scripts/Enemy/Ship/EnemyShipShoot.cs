@@ -31,7 +31,9 @@ public class EnemyShipShoot : MonoBehaviour
 
     void ShootBullet()
     {
-        GameObject bullet = Instantiate(bulletPrefab, bulletSpawner.position, Quaternion.identity);
+        GameObject bullet = BulletPooler.Instance.GetBullet();
+        bullet.transform.position = bulletSpawner.position;
+        bullet.transform.rotation = Quaternion.identity;
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
 
         bullet.transform.SetParent(parentRoot);

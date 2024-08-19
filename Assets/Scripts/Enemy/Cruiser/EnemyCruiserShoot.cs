@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EnemyShoot : MonoBehaviour
+public class EnemyCruiserShoot : MonoBehaviour
 {
     [SerializeField]
     private Transform enemy;
@@ -34,19 +34,14 @@ public class EnemyShoot : MonoBehaviour
 
     void Start()
     {
-        // Get the Renderer component from the enemy
         enemyRenderer = enemy.GetComponent<Renderer>();
-
-        // Find the main camera in the scene
         mainCamera = Camera.main;
     }
 
-    // Update is called once per frame
     void Update()
     {
         timeSinceLastFire += Time.deltaTime;
 
-        // Enemy shoot if in Camera Range
         if (IsVisibleToCamera(mainCamera) && timeSinceLastFire >= fireInterval)
         {
             timeSinceLastFire = 0f;
@@ -56,48 +51,33 @@ public class EnemyShoot : MonoBehaviour
 
     void ShootBullets()
     {
-        // Calculate the direction from the enemy to the player
         Vector2 baseDirection = (playerOne.position - transform.position).normalized;
-
-        // Convert the base direction to an angle
         float baseAngle = Mathf.Atan2(baseDirection.y, baseDirection.x) * Mathf.Rad2Deg;
-
-        // Calculate the angle between each bullet in the spread
         float angleStep = spreadAngle / (numberOfBullets - 1);
-
-        // Calculate the starting angle for the first bullet (leftmost in the spread)
         float startAngle = baseAngle - (spreadAngle / 2);
 
         for (int i = 0; i < numberOfBullets; i++)
         {
-            // Calculate the angle for this bullet
             float currentAngle = startAngle + (i * angleStep);
-
-            // Convert the angle to a direction vector
             Vector2 bulletDirection = new Vector2(Mathf.Cos(currentAngle * Mathf.Deg2Rad), Mathf.Sin(currentAngle * Mathf.Deg2Rad)).normalized;
 
-            // Create the bullet
-            GameObject bullet = Instantiate(bulletPrefab, bulletSpawner.position, Quaternion.identity);
-            Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+            GameObject bullet = BulletPooler.Instance.GetBullet();
+            bullet.transform.position = bulletSpawner.position;
+            bullet.transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(bulletDirection.y, bulletDirection.x) * Mathf.Rad2Deg - 90f);
 
-            bullet.transform.SetParent(parentRoot);
+            Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+            bullet.transform.SetParent(parentRoot, true); // Maintain world position
 
             if (rb != null)
             {
-                // Set the velocity of the bullet based on the direction and speed
                 rb.velocity = bulletDirection * bulletSpeed;
-
-                // Set the rotation of the bullet to point towards the player
-                float bulletAngle = Mathf.Atan2(bulletDirection.y, bulletDirection.x) * Mathf.Rad2Deg - 90f; // Adjust for sprite orientation
-                bullet.transform.rotation = Quaternion.Euler(0, 0, bulletAngle);
             }
         }
     }
+
     private bool IsVisibleToCamera(Camera camera)
     {
-        // Calculer les plans du frustum de la caméra
         Plane[] planes = GeometryUtility.CalculateFrustumPlanes(camera);
-        // Tester si les limites du Renderer sont à l'intérieur des plans du frustum
         return GeometryUtility.TestPlanesAABB(planes, enemyRenderer.bounds);
     }
 }
