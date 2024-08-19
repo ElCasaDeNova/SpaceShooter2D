@@ -15,10 +15,10 @@ public class DeleteBullet : MonoBehaviour
 
     void Update()
     {
-        // Destroy Bullet if out of vision
+        // Retourne la balle au pool si elle est hors de la vue
         if (IsInvisibleToCamera(mainCamera))
         {
-            Destroy(gameObject); // Destroy the bullet itself
+            BulletPooler.Instance.ReturnBullet(gameObject); // Retourne la balle au pool
         }
     }
 
