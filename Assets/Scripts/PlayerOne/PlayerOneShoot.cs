@@ -3,9 +3,6 @@ using UnityEngine;
 public class PlayerOneShoot : MonoBehaviour
 {
     [SerializeField]
-    private GameObject bulletPrefab; // The prefab of the bullet to instantiate
-
-    [SerializeField]
     private float bulletSpeed = 10f; // The speed of the bullet
 
     [SerializeField]
@@ -15,9 +12,6 @@ public class PlayerOneShoot : MonoBehaviour
     private Transform bulletSpawner;
 
     private float timeSinceLastFire;
-
-    [SerializeField]
-    private Transform parentRoot;
 
     void Update()
     {
@@ -32,18 +26,18 @@ public class PlayerOneShoot : MonoBehaviour
 
     void ShootBullet()
     {
-        GameObject bullet = Instantiate(bulletPrefab, bulletSpawner.position, Quaternion.identity);
+        GameObject bullet = BulletPooler.Instance.GetBullet();
+        bullet.transform.position = bulletSpawner.position;
+        bullet.transform.rotation = Quaternion.identity;
+
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-
-        bullet.transform.SetParent(parentRoot);
-
         if (rb == null)
         {
             return;
         }
 
         Vector2 direction = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized;
-        rb.velocity = transform.up * bulletSpeed;
+        rb.velocity = direction * bulletSpeed;
 
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f; // Adjust for sprite orientation
         bullet.transform.rotation = Quaternion.Euler(0, 0, angle);
