@@ -145,8 +145,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  healthBarFill: {fileID: 803850236}
-  healthBarCanvas: {fileID: 1423164836}
+  enemyHealthBarBackground: {fileID: 1423164838}
+  enemyHealthBarFill: {fileID: 803850236}
+  enemyHealthBarVisibleTime: 1
 --- !u!4 &73592243 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1938376419010059253, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
@@ -745,6 +746,18 @@ PrefabInstance:
       propertyPath: healthBarCanvas
       value: 
       objectReference: {fileID: 1423164836}
+    - target: {fileID: 7793476232175031228, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+      propertyPath: EnemyHealthBarFill
+      value: 
+      objectReference: {fileID: 803850236}
+    - target: {fileID: 7793476232175031228, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+      propertyPath: enemyHealthBarFill
+      value: 
+      objectReference: {fileID: 803850236}
+    - target: {fileID: 7793476232175031228, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+      propertyPath: enemyHealthBarBackground
+      value: 
+      objectReference: {fileID: 1423164838}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -826,6 +839,18 @@ PrefabInstance:
       propertyPath: healthBarCanvas
       value: 
       objectReference: {fileID: 1423164836}
+    - target: {fileID: 7793476232175031228, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+      propertyPath: EnemyHealthBarFill
+      value: 
+      objectReference: {fileID: 803850236}
+    - target: {fileID: 7793476232175031228, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+      propertyPath: enemyHealthBarFill
+      value: 
+      objectReference: {fileID: 803850236}
+    - target: {fileID: 7793476232175031228, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+      propertyPath: enemyHealthBarBackground
+      value: 
+      objectReference: {fileID: 1423164838}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -859,8 +884,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  healthBarFill: {fileID: 803850236}
-  healthBarCanvas: {fileID: 1423164836}
+  enemyHealthBarBackground: {fileID: 1423164838}
+  enemyHealthBarFill: {fileID: 803850236}
+  enemyHealthBarVisibleTime: 1
 --- !u!1001 &617183424
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1058,6 +1084,18 @@ PrefabInstance:
       propertyPath: healthBarCanvas
       value: 
       objectReference: {fileID: 1423164836}
+    - target: {fileID: 7793476232175031228, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+      propertyPath: EnemyHealthBarFill
+      value: 
+      objectReference: {fileID: 803850236}
+    - target: {fileID: 7793476232175031228, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+      propertyPath: enemyHealthBarFill
+      value: 
+      objectReference: {fileID: 803850236}
+    - target: {fileID: 7793476232175031228, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+      propertyPath: enemyHealthBarBackground
+      value: 
+      objectReference: {fileID: 1423164838}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1244,6 +1282,18 @@ PrefabInstance:
       propertyPath: healthBarCanvas
       value: 
       objectReference: {fileID: 1423164836}
+    - target: {fileID: 7793476232175031228, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+      propertyPath: EnemyHealthBarFill
+      value: 
+      objectReference: {fileID: 803850236}
+    - target: {fileID: 7793476232175031228, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+      propertyPath: enemyHealthBarFill
+      value: 
+      objectReference: {fileID: 803850236}
+    - target: {fileID: 7793476232175031228, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+      propertyPath: enemyHealthBarBackground
+      value: 
+      objectReference: {fileID: 1423164838}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1614,6 +1664,18 @@ PrefabInstance:
       propertyPath: healthBarCanvas
       value: 
       objectReference: {fileID: 1423164836}
+    - target: {fileID: 7793476232175031228, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+      propertyPath: EnemyHealthBarFill
+      value: 
+      objectReference: {fileID: 803850236}
+    - target: {fileID: 7793476232175031228, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+      propertyPath: enemyHealthBarFill
+      value: 
+      objectReference: {fileID: 803850236}
+    - target: {fileID: 7793476232175031228, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+      propertyPath: enemyHealthBarBackground
+      value: 
+      objectReference: {fileID: 1423164838}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1804,6 +1866,18 @@ PrefabInstance:
       propertyPath: healthBarCanvas
       value: 
       objectReference: {fileID: 1423164836}
+    - target: {fileID: 7793476232175031228, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+      propertyPath: EnemyHealthBarFill
+      value: 
+      objectReference: {fileID: 803850236}
+    - target: {fileID: 7793476232175031228, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+      propertyPath: enemyHealthBarFill
+      value: 
+      objectReference: {fileID: 803850236}
+    - target: {fileID: 7793476232175031228, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+      propertyPath: enemyHealthBarBackground
+      value: 
+      objectReference: {fileID: 1423164838}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1827,8 +1901,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  healthBarFill: {fileID: 803850236}
-  healthBarCanvas: {fileID: 1423164836}
+  enemyHealthBarBackground: {fileID: 1423164838}
+  enemyHealthBarFill: {fileID: 803850236}
+  enemyHealthBarVisibleTime: 1
 --- !u!1 &1101073155
 GameObject:
   m_ObjectHideFlags: 0
@@ -1936,6 +2011,18 @@ PrefabInstance:
       propertyPath: healthBarCanvas
       value: 
       objectReference: {fileID: 1423164836}
+    - target: {fileID: 7793476232175031228, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+      propertyPath: EnemyHealthBarFill
+      value: 
+      objectReference: {fileID: 803850236}
+    - target: {fileID: 7793476232175031228, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+      propertyPath: enemyHealthBarFill
+      value: 
+      objectReference: {fileID: 803850236}
+    - target: {fileID: 7793476232175031228, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+      propertyPath: enemyHealthBarBackground
+      value: 
+      objectReference: {fileID: 1423164838}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1959,8 +2046,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  healthBarFill: {fileID: 803850236}
-  healthBarCanvas: {fileID: 1423164836}
+  enemyHealthBarBackground: {fileID: 1423164838}
+  enemyHealthBarFill: {fileID: 803850236}
+  enemyHealthBarVisibleTime: 1
 --- !u!1 &1154953553
 GameObject:
   m_ObjectHideFlags: 0
@@ -2122,6 +2210,18 @@ PrefabInstance:
       propertyPath: healthBarCanvas
       value: 
       objectReference: {fileID: 1423164836}
+    - target: {fileID: 7793476232175031228, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+      propertyPath: EnemyHealthBarFill
+      value: 
+      objectReference: {fileID: 803850236}
+    - target: {fileID: 7793476232175031228, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+      propertyPath: enemyHealthBarFill
+      value: 
+      objectReference: {fileID: 803850236}
+    - target: {fileID: 7793476232175031228, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+      propertyPath: enemyHealthBarBackground
+      value: 
+      objectReference: {fileID: 1423164838}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2385,6 +2485,18 @@ PrefabInstance:
       propertyPath: healthBarCanvas
       value: 
       objectReference: {fileID: 1423164836}
+    - target: {fileID: 7793476232175031228, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+      propertyPath: EnemyHealthBarFill
+      value: 
+      objectReference: {fileID: 803850236}
+    - target: {fileID: 7793476232175031228, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+      propertyPath: enemyHealthBarFill
+      value: 
+      objectReference: {fileID: 803850236}
+    - target: {fileID: 7793476232175031228, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+      propertyPath: enemyHealthBarBackground
+      value: 
+      objectReference: {fileID: 1423164838}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2542,6 +2654,18 @@ PrefabInstance:
       propertyPath: healthBarCanvas
       value: 
       objectReference: {fileID: 1423164836}
+    - target: {fileID: 7793476232175031228, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+      propertyPath: EnemyHealthBarFill
+      value: 
+      objectReference: {fileID: 803850236}
+    - target: {fileID: 7793476232175031228, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+      propertyPath: enemyHealthBarFill
+      value: 
+      objectReference: {fileID: 803850236}
+    - target: {fileID: 7793476232175031228, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+      propertyPath: enemyHealthBarBackground
+      value: 
+      objectReference: {fileID: 1423164838}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2694,6 +2818,18 @@ PrefabInstance:
       propertyPath: healthBarCanvas
       value: 
       objectReference: {fileID: 1423164836}
+    - target: {fileID: 7793476232175031228, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+      propertyPath: EnemyHealthBarFill
+      value: 
+      objectReference: {fileID: 803850236}
+    - target: {fileID: 7793476232175031228, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+      propertyPath: enemyHealthBarFill
+      value: 
+      objectReference: {fileID: 803850236}
+    - target: {fileID: 7793476232175031228, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+      propertyPath: enemyHealthBarBackground
+      value: 
+      objectReference: {fileID: 1423164838}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2806,8 +2942,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  healthBarFill: {fileID: 803850236}
-  healthBarCanvas: {fileID: 1423164836}
+  enemyHealthBarBackground: {fileID: 1423164838}
+  enemyHealthBarFill: {fileID: 803850236}
+  enemyHealthBarVisibleTime: 1
 --- !u!1 &1566105953
 GameObject:
   m_ObjectHideFlags: 0
@@ -2915,6 +3052,18 @@ PrefabInstance:
       propertyPath: healthBarCanvas
       value: 
       objectReference: {fileID: 1423164836}
+    - target: {fileID: 7793476232175031228, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+      propertyPath: EnemyHealthBarFill
+      value: 
+      objectReference: {fileID: 803850236}
+    - target: {fileID: 7793476232175031228, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+      propertyPath: enemyHealthBarFill
+      value: 
+      objectReference: {fileID: 803850236}
+    - target: {fileID: 7793476232175031228, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+      propertyPath: enemyHealthBarBackground
+      value: 
+      objectReference: {fileID: 1423164838}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2996,6 +3145,18 @@ PrefabInstance:
       propertyPath: healthBarCanvas
       value: 
       objectReference: {fileID: 1423164836}
+    - target: {fileID: 7793476232175031228, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+      propertyPath: EnemyHealthBarFill
+      value: 
+      objectReference: {fileID: 803850236}
+    - target: {fileID: 7793476232175031228, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+      propertyPath: enemyHealthBarFill
+      value: 
+      objectReference: {fileID: 803850236}
+    - target: {fileID: 7793476232175031228, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+      propertyPath: enemyHealthBarBackground
+      value: 
+      objectReference: {fileID: 1423164838}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3019,8 +3180,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  healthBarFill: {fileID: 803850236}
-  healthBarCanvas: {fileID: 1423164836}
+  enemyHealthBarBackground: {fileID: 1423164838}
+  enemyHealthBarFill: {fileID: 803850236}
+  enemyHealthBarVisibleTime: 1
 --- !u!1001 &1583428983
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3097,6 +3259,18 @@ PrefabInstance:
       propertyPath: healthBarCanvas
       value: 
       objectReference: {fileID: 1423164836}
+    - target: {fileID: 7793476232175031228, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+      propertyPath: EnemyHealthBarFill
+      value: 
+      objectReference: {fileID: 803850236}
+    - target: {fileID: 7793476232175031228, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+      propertyPath: enemyHealthBarFill
+      value: 
+      objectReference: {fileID: 803850236}
+    - target: {fileID: 7793476232175031228, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+      propertyPath: enemyHealthBarBackground
+      value: 
+      objectReference: {fileID: 1423164838}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3314,6 +3488,18 @@ PrefabInstance:
       propertyPath: healthBarCanvas
       value: 
       objectReference: {fileID: 1423164836}
+    - target: {fileID: 7793476232175031228, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+      propertyPath: EnemyHealthBarFill
+      value: 
+      objectReference: {fileID: 803850236}
+    - target: {fileID: 7793476232175031228, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+      propertyPath: enemyHealthBarFill
+      value: 
+      objectReference: {fileID: 803850236}
+    - target: {fileID: 7793476232175031228, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+      propertyPath: enemyHealthBarBackground
+      value: 
+      objectReference: {fileID: 1423164838}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3468,6 +3654,18 @@ PrefabInstance:
       propertyPath: healthBarCanvas
       value: 
       objectReference: {fileID: 1423164836}
+    - target: {fileID: 7793476232175031228, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+      propertyPath: EnemyHealthBarFill
+      value: 
+      objectReference: {fileID: 803850236}
+    - target: {fileID: 7793476232175031228, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+      propertyPath: enemyHealthBarFill
+      value: 
+      objectReference: {fileID: 803850236}
+    - target: {fileID: 7793476232175031228, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+      propertyPath: enemyHealthBarBackground
+      value: 
+      objectReference: {fileID: 1423164838}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3592,8 +3790,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  healthBarFill: {fileID: 803850236}
-  healthBarCanvas: {fileID: 1423164836}
+  enemyHealthBarBackground: {fileID: 1423164838}
+  enemyHealthBarFill: {fileID: 803850236}
+  enemyHealthBarVisibleTime: 1
 --- !u!4 &1956324868 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1938376419010059253, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
@@ -3780,6 +3979,18 @@ PrefabInstance:
       propertyPath: healthBarCanvas
       value: 
       objectReference: {fileID: 1423164836}
+    - target: {fileID: 7793476232175031228, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+      propertyPath: EnemyHealthBarFill
+      value: 
+      objectReference: {fileID: 803850236}
+    - target: {fileID: 7793476232175031228, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+      propertyPath: enemyHealthBarFill
+      value: 
+      objectReference: {fileID: 803850236}
+    - target: {fileID: 7793476232175031228, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+      propertyPath: enemyHealthBarBackground
+      value: 
+      objectReference: {fileID: 1423164838}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3897,6 +4108,18 @@ PrefabInstance:
       propertyPath: healthBarCanvas
       value: 
       objectReference: {fileID: 1423164836}
+    - target: {fileID: 7793476232175031228, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+      propertyPath: EnemyHealthBarFill
+      value: 
+      objectReference: {fileID: 803850236}
+    - target: {fileID: 7793476232175031228, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+      propertyPath: enemyHealthBarFill
+      value: 
+      objectReference: {fileID: 803850236}
+    - target: {fileID: 7793476232175031228, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+      propertyPath: enemyHealthBarBackground
+      value: 
+      objectReference: {fileID: 1423164838}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

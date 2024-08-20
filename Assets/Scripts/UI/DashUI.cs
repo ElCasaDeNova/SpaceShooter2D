@@ -1,7 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using Unity.Mathematics;
+using UnityEngine;
 
 public class DashUI : MonoBehaviour
 {
@@ -14,13 +12,13 @@ public class DashUI : MonoBehaviour
 
     private void Start()
     {
-        defaultWidth=dashLoadingBar.sizeDelta.x;
+        defaultWidth = dashLoadingBar.sizeDelta.x;
     }
 
     // Update is called once per frame
     void Update()
     {
-        float x = math.remap(shipTranslate.DashCooldown,0,0, defaultWidth,shipTranslate.TimeRemaining);
-        dashLoadingBar.sizeDelta=new Vector2(x, dashLoadingBar.sizeDelta.y);
+        float x = math.remap(shipTranslate.DashCooldown, 0, 0, defaultWidth, shipTranslate.TimeRemaining);
+        dashLoadingBar.sizeDelta = new Vector2(x, dashLoadingBar.sizeDelta.y);
     }
 }
