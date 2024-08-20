@@ -145,6 +145,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+  healthBarFill: {fileID: 803850236}
+  healthBarCanvas: {fileID: 1423164836}
 --- !u!4 &73592243 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1938376419010059253, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
@@ -335,6 +337,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 246568370}
+  - {fileID: 1423164837}
+  - {fileID: 2127880456}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -390,8 +394,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -10, y: 10}
-  m_SizeDelta: {x: 303.39, y: 80}
+  m_AnchoredPosition: {x: -20, y: 50}
+  m_SizeDelta: {x: 300, y: 20}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &246568371
 MonoBehaviour:
@@ -413,11 +417,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
+  m_FillMethod: 0
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
@@ -733,6 +737,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyShip 16
       objectReference: {fileID: 0}
+    - target: {fileID: 7793476232175031228, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+      propertyPath: healthBarFill
+      value: 
+      objectReference: {fileID: 803850236}
+    - target: {fileID: 7793476232175031228, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+      propertyPath: healthBarCanvas
+      value: 
+      objectReference: {fileID: 1423164836}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -806,6 +818,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyShip 8
       objectReference: {fileID: 0}
+    - target: {fileID: 7793476232175031228, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+      propertyPath: healthBarFill
+      value: 
+      objectReference: {fileID: 803850236}
+    - target: {fileID: 7793476232175031228, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+      propertyPath: healthBarCanvas
+      value: 
+      objectReference: {fileID: 1423164836}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -839,6 +859,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+  healthBarFill: {fileID: 803850236}
+  healthBarCanvas: {fileID: 1423164836}
 --- !u!1001 &617183424
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1028,6 +1050,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyShip 5
       objectReference: {fileID: 0}
+    - target: {fileID: 7793476232175031228, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+      propertyPath: healthBarFill
+      value: 
+      objectReference: {fileID: 803850236}
+    - target: {fileID: 7793476232175031228, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+      propertyPath: healthBarCanvas
+      value: 
+      objectReference: {fileID: 1423164836}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1206,11 +1236,94 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyShip 18
       objectReference: {fileID: 0}
+    - target: {fileID: 7793476232175031228, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+      propertyPath: healthBarFill
+      value: 
+      objectReference: {fileID: 803850236}
+    - target: {fileID: 7793476232175031228, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+      propertyPath: healthBarCanvas
+      value: 
+      objectReference: {fileID: 1423164836}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+--- !u!1 &803850234
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 803850235}
+  - component: {fileID: 803850237}
+  - component: {fileID: 803850236}
+  m_Layer: 5
+  m_Name: EnemyHealthBarFill
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &803850235
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 803850234}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1423164837}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 500, y: 20}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &803850236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 803850234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.6415094, g: 0.003025995, b: 0.003025995, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 3
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 0
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &803850237
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 803850234}
+  m_CullTransparentMesh: 1
 --- !u!4 &819422528 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1938376419010059253, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
@@ -1493,6 +1606,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyShip 11
       objectReference: {fileID: 0}
+    - target: {fileID: 7793476232175031228, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+      propertyPath: healthBarFill
+      value: 
+      objectReference: {fileID: 803850236}
+    - target: {fileID: 7793476232175031228, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+      propertyPath: healthBarCanvas
+      value: 
+      objectReference: {fileID: 1423164836}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1675,6 +1796,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyShip 7
       objectReference: {fileID: 0}
+    - target: {fileID: 7793476232175031228, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+      propertyPath: healthBarFill
+      value: 
+      objectReference: {fileID: 803850236}
+    - target: {fileID: 7793476232175031228, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+      propertyPath: healthBarCanvas
+      value: 
+      objectReference: {fileID: 1423164836}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1698,6 +1827,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+  healthBarFill: {fileID: 803850236}
+  healthBarCanvas: {fileID: 1423164836}
 --- !u!1 &1101073155
 GameObject:
   m_ObjectHideFlags: 0
@@ -1797,6 +1928,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyShip 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7793476232175031228, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+      propertyPath: healthBarFill
+      value: 
+      objectReference: {fileID: 803850236}
+    - target: {fileID: 7793476232175031228, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+      propertyPath: healthBarCanvas
+      value: 
+      objectReference: {fileID: 1423164836}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1820,6 +1959,83 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+  healthBarFill: {fileID: 803850236}
+  healthBarCanvas: {fileID: 1423164836}
+--- !u!1 &1154953553
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1154953554}
+  - component: {fileID: 1154953556}
+  - component: {fileID: 1154953555}
+  m_Layer: 5
+  m_Name: PlayerHealthBarFill
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1154953554
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1154953553}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2127880456}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 500, y: 20}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1154953555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1154953553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.6415094, g: 0.003025995, b: 0.003025995, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 3
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 0
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1154953556
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1154953553}
+  m_CullTransparentMesh: 1
 --- !u!4 &1161152352 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2701789572931774492, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
@@ -1898,6 +2114,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyShip 6
       objectReference: {fileID: 0}
+    - target: {fileID: 7793476232175031228, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+      propertyPath: healthBarFill
+      value: 
+      objectReference: {fileID: 803850236}
+    - target: {fileID: 7793476232175031228, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+      propertyPath: healthBarCanvas
+      value: 
+      objectReference: {fileID: 1423164836}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2153,11 +2377,95 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyShip 13
       objectReference: {fileID: 0}
+    - target: {fileID: 7793476232175031228, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+      propertyPath: healthBarFill
+      value: 
+      objectReference: {fileID: 803850236}
+    - target: {fileID: 7793476232175031228, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+      propertyPath: healthBarCanvas
+      value: 
+      objectReference: {fileID: 1423164836}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+--- !u!1 &1423164836
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1423164837}
+  - component: {fileID: 1423164839}
+  - component: {fileID: 1423164838}
+  m_Layer: 5
+  m_Name: EnemyHealthBarBackGround
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1423164837
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1423164836}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 803850235}
+  m_Father: {fileID: 245953080}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: -49}
+  m_SizeDelta: {x: 500, y: 20}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1423164838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1423164836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.4056604, g: 0.4056604, b: 0.4056604, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 3
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1423164839
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1423164836}
+  m_CullTransparentMesh: 1
 --- !u!1001 &1427201872
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2226,6 +2534,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyShip 15
       objectReference: {fileID: 0}
+    - target: {fileID: 7793476232175031228, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+      propertyPath: healthBarFill
+      value: 
+      objectReference: {fileID: 803850236}
+    - target: {fileID: 7793476232175031228, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+      propertyPath: healthBarCanvas
+      value: 
+      objectReference: {fileID: 1423164836}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2370,6 +2686,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyShip 10
       objectReference: {fileID: 0}
+    - target: {fileID: 7793476232175031228, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+      propertyPath: healthBarFill
+      value: 
+      objectReference: {fileID: 803850236}
+    - target: {fileID: 7793476232175031228, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+      propertyPath: healthBarCanvas
+      value: 
+      objectReference: {fileID: 1423164836}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2482,6 +2806,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+  healthBarFill: {fileID: 803850236}
+  healthBarCanvas: {fileID: 1423164836}
 --- !u!1 &1566105953
 GameObject:
   m_ObjectHideFlags: 0
@@ -2581,6 +2907,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyShip 4
       objectReference: {fileID: 0}
+    - target: {fileID: 7793476232175031228, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+      propertyPath: healthBarFill
+      value: 
+      objectReference: {fileID: 803850236}
+    - target: {fileID: 7793476232175031228, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+      propertyPath: healthBarCanvas
+      value: 
+      objectReference: {fileID: 1423164836}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2654,6 +2988,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyShip 14
       objectReference: {fileID: 0}
+    - target: {fileID: 7793476232175031228, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+      propertyPath: healthBarFill
+      value: 
+      objectReference: {fileID: 803850236}
+    - target: {fileID: 7793476232175031228, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+      propertyPath: healthBarCanvas
+      value: 
+      objectReference: {fileID: 1423164836}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2677,6 +3019,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+  healthBarFill: {fileID: 803850236}
+  healthBarCanvas: {fileID: 1423164836}
 --- !u!1001 &1583428983
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2745,6 +3089,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyShip 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7793476232175031228, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+      propertyPath: healthBarFill
+      value: 
+      objectReference: {fileID: 803850236}
+    - target: {fileID: 7793476232175031228, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+      propertyPath: healthBarCanvas
+      value: 
+      objectReference: {fileID: 1423164836}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2954,6 +3306,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyShip 12
       objectReference: {fileID: 0}
+    - target: {fileID: 7793476232175031228, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+      propertyPath: healthBarFill
+      value: 
+      objectReference: {fileID: 803850236}
+    - target: {fileID: 7793476232175031228, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+      propertyPath: healthBarCanvas
+      value: 
+      objectReference: {fileID: 1423164836}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3100,6 +3460,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyShip 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7793476232175031228, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+      propertyPath: healthBarFill
+      value: 
+      objectReference: {fileID: 803850236}
+    - target: {fileID: 7793476232175031228, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+      propertyPath: healthBarCanvas
+      value: 
+      objectReference: {fileID: 1423164836}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3224,6 +3592,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+  healthBarFill: {fileID: 803850236}
+  healthBarCanvas: {fileID: 1423164836}
 --- !u!4 &1956324868 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1938376419010059253, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
@@ -3402,6 +3772,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyShip 9
       objectReference: {fileID: 0}
+    - target: {fileID: 7793476232175031228, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+      propertyPath: healthBarFill
+      value: 
+      objectReference: {fileID: 803850236}
+    - target: {fileID: 7793476232175031228, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+      propertyPath: healthBarCanvas
+      value: 
+      objectReference: {fileID: 1423164836}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3511,11 +3889,95 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyShip 17
       objectReference: {fileID: 0}
+    - target: {fileID: 7793476232175031228, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+      propertyPath: healthBarFill
+      value: 
+      objectReference: {fileID: 803850236}
+    - target: {fileID: 7793476232175031228, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+      propertyPath: healthBarCanvas
+      value: 
+      objectReference: {fileID: 1423164836}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
+--- !u!1 &2127880455
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2127880456}
+  - component: {fileID: 2127880458}
+  - component: {fileID: 2127880457}
+  m_Layer: 5
+  m_Name: PlayerHealthBarBackGround
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2127880456
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2127880455}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1154953554}
+  m_Father: {fileID: 245953080}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 50}
+  m_SizeDelta: {x: 500, y: 20}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2127880457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2127880455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.4056604, g: 0.4056604, b: 0.4056604, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 3
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &2127880458
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2127880455}
+  m_CullTransparentMesh: 1
 --- !u!1001 &3412824311676989991
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3641,6 +4103,14 @@ PrefabInstance:
       propertyPath: parentRoot
       value: 
       objectReference: {fileID: 2032146501}
+    - target: {fileID: 3017013977261716302, guid: 69af5ef9076beb5478f7d4e59a359de1, type: 3}
+      propertyPath: maxHealth
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 3017013977261716302, guid: 69af5ef9076beb5478f7d4e59a359de1, type: 3}
+      propertyPath: healthBarFill
+      value: 
+      objectReference: {fileID: 1154953555}
     - target: {fileID: 8079297082724316504, guid: 69af5ef9076beb5478f7d4e59a359de1, type: 3}
       propertyPath: dashSpeed
       value: 45
