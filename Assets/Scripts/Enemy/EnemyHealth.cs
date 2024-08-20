@@ -19,15 +19,21 @@ public class EnemyHealth : MonoBehaviour
 
     private static EnemyHealth lastHitEnemy; // To store the last enemy hit
 
+    private bool isHealthBarCoroutineRunning = false;
+
     void Start()
     {
         currentHealth = maxHealth;
 
-        // Initialize the top screen health bar
-        if (enemyHealthBarFill != null)
+        if (enemyHealthBarBackground == null || enemyHealthBarFill == null)
         {
-            enemyHealthBarFill.gameObject.SetActive(false); // Hide the health bar at the start
+            Debug.LogError("Health bar references are not assigned!");
+            return;
         }
+
+        // Initialize the top screen health bar
+        enemyHealthBarBackground.gameObject.SetActive(false);
+        enemyHealthBarFill.gameObject.SetActive(false);
     }
 
     private void UpdateHealthBar()
@@ -49,14 +55,17 @@ public class EnemyHealth : MonoBehaviour
         }
 
         // Update and show the health bar at the top of the screen
-        if (enemyHealthBarFill != null)
+        if (enemyHealthBarFill != null && enemyHealthBarBackground != null)
         {
             // Show the health bar at the top of the screen
             enemyHealthBarBackground.gameObject.SetActive(true);
             enemyHealthBarFill.gameObject.SetActive(true);
             UpdateHealthBar();
-            StopAllCoroutines();
-            StartCoroutine(HideEnemyHealthBarAfterDelay());
+
+            if (!isHealthBarCoroutineRunning)
+            {
+                StartCoroutine(HideEnemyHealthBarAfterDelay());
+            }
         }
 
         // Update the last hit enemy
@@ -65,17 +74,29 @@ public class EnemyHealth : MonoBehaviour
 
     private IEnumerator HideEnemyHealthBarAfterDelay()
     {
+        isHealthBarCoroutineRunning = true;
         yield return new WaitForSeconds(enemyHealthBarVisibleTime);
-        if (enemyHealthBarFill != null)
+
+        if (enemyHealthBarFill != null && enemyHealthBarBackground != null)
         {
             // Hide the health bar after the delay
             enemyHealthBarBackground.gameObject.SetActive(false);
             enemyHealthBarFill.gameObject.SetActive(false);
         }
+
+        isHealthBarCoroutineRunning = false;
     }
 
     void Die()
     {
+        // Hide the health bar immediately
+        if (enemyHealthBarBackground != null && enemyHealthBarFill != null)
+        {
+            enemyHealthBarBackground.gameObject.SetActive(false);
+            enemyHealthBarFill.gameObject.SetActive(false);
+        }
+
+        // Destroy the enemy GameObject
         Destroy(gameObject);
     }
 

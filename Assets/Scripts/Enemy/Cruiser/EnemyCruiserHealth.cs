@@ -44,6 +44,8 @@ public class EnemyCruiserHealth : MonoBehaviour
 
     private static EnemyCruiserHealth lastHitEnemy; // To store the last enemy hit
 
+    private bool isHealthBarCoroutineRunning = false;
+
     // Initialize health points
     void Start()
     {
@@ -62,6 +64,7 @@ public class EnemyCruiserHealth : MonoBehaviour
         // Initialize the top screen health bar
         if (enemyHealthBarFill != null)
         {
+            enemyHealthBarBackground.gameObject.SetActive(false);
             enemyHealthBarFill.gameObject.SetActive(false); // Hide the health bar at the start
         }
     }
@@ -77,14 +80,17 @@ public class EnemyCruiserHealth : MonoBehaviour
         }
 
         // Update and show the health bar at the top of the screen
-        if (enemyHealthBarFill != null)
+        if (enemyHealthBarFill != null && enemyHealthBarBackground != null)
         {
             // Show the health bar at the top of the screen
             enemyHealthBarBackground.gameObject.SetActive(true);
             enemyHealthBarFill.gameObject.SetActive(true);
             UpdateHealthBar();
-            StopAllCoroutines();
-            StartCoroutine(HideEnemyHealthBarAfterDelay());
+
+            if (!isHealthBarCoroutineRunning)
+            {
+                StartCoroutine(HideEnemyHealthBarAfterDelay());
+            }
         }
 
         // Update the last hit enemy
@@ -99,6 +105,13 @@ public class EnemyCruiserHealth : MonoBehaviour
 
         // Spawn ships
         SpawnShips();
+
+        // Hide the health bar immediately
+        if (enemyHealthBarBackground != null && enemyHealthBarFill != null)
+        {
+            enemyHealthBarBackground.gameObject.SetActive(false);
+            enemyHealthBarFill.gameObject.SetActive(false);
+        }
 
         // Destroy the cruiser object
         Destroy(gameObject);
@@ -154,13 +167,17 @@ public class EnemyCruiserHealth : MonoBehaviour
 
     private IEnumerator HideEnemyHealthBarAfterDelay()
     {
+        isHealthBarCoroutineRunning = true;
         yield return new WaitForSeconds(enemyHealthBarVisibleTime);
-        if (enemyHealthBarFill != null)
+
+        if (enemyHealthBarFill != null && enemyHealthBarBackground != null)
         {
             // Hide the health bar after the delay
             enemyHealthBarBackground.gameObject.SetActive(false);
             enemyHealthBarFill.gameObject.SetActive(false);
         }
+
+        isHealthBarCoroutineRunning = false;
     }
 
     public float GetCurrentHealth()
