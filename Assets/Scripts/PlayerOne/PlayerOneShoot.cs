@@ -11,7 +11,18 @@ public class PlayerOneShoot : MonoBehaviour
     [SerializeField]
     private Transform bulletSpawner;
 
+    [SerializeField]
+    private AudioClip shootSound; // Drag your sound effect here in the inspector
+
+    private AudioSource audioSource;
+
     private float timeSinceLastFire;
+
+    void Start()
+    {
+        // Get the AudioSource component on this GameObject
+        audioSource = GetComponent<AudioSource>();
+    }
 
     void Update()
     {
@@ -41,5 +52,11 @@ public class PlayerOneShoot : MonoBehaviour
 
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f; // Adjust for sprite orientation
         bullet.transform.rotation = Quaternion.Euler(0, 0, angle);
+
+        // Play the shooting sound
+        if (audioSource != null && shootSound != null)
+        {
+            audioSource.PlayOneShot(shootSound);
+        }
     }
 }
