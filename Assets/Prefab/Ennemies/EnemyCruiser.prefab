@@ -152,7 +152,7 @@ MonoBehaviour:
   enemyHealthBarBackground: {fileID: 0}
   enemyHealthBarFill: {fileID: 0}
   enemyHealthBarVisibleTime: 1
-  explosionSound: {fileID: 8300000, guid: d11230aada070a148ad9cac9ac59514d, type: 3}
+  audioSource: {fileID: 130352174527725740}
 --- !u!50 &4609932947752601880
 Rigidbody2D:
   serializedVersion: 4

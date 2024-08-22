@@ -47,9 +47,9 @@ public class EnemyCruiserHealth : MonoBehaviour
     private bool isHealthBarCoroutineRunning = false;
 
     [SerializeField]
-    private AudioClip explosionSound;
-
     private AudioSource audioSource;
+    private AudioClip explosionSound;
+    
 
     // Initialize health points
     void Start()
@@ -57,7 +57,7 @@ public class EnemyCruiserHealth : MonoBehaviour
         currentHealth = maxHealth;
 
         // Get the AudioSource component on this GameObject
-        audioSource = GetComponent<AudioSource>();
+        explosionSound = audioSource.clip;
 
         // Set spawnPoints from ScriptSpawnersManagement
         if (spawnersManager != null)
