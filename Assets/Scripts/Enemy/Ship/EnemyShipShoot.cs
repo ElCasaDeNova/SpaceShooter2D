@@ -18,6 +18,12 @@ public class EnemyShipShoot : MonoBehaviour
 
     public Transform parentRoot;
 
+    [SerializeField]
+    private AudioClip shootSound;
+
+    [SerializeField]
+    private AudioSource audioSource;
+
     void Update()
     {
         timeSinceLastFire += Time.deltaTime;
@@ -49,5 +55,11 @@ public class EnemyShipShoot : MonoBehaviour
         // Calculate the rotation based on the shooting direction
         float angle = Mathf.Atan2(-transform.up.y, -transform.up.x) * Mathf.Rad2Deg - 90f; // Adjust for sprite orientation
         bullet.transform.rotation = Quaternion.Euler(0, 0, angle);
+
+        // Play the shooting sound
+        if (audioSource != null && shootSound != null)
+        {
+            audioSource.PlayOneShot(shootSound);
+        }
     }
 }

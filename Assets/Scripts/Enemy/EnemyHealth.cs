@@ -24,14 +24,12 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField]
     private AudioClip explosionSound;
 
+    [SerializeField]
     private AudioSource audioSource;
 
     void Start()
     {
         currentHealth = maxHealth;
-
-        // Get the AudioSource component on this GameObject
-        audioSource = GetComponent<AudioSource>();
 
         if (enemyHealthBarBackground == null || enemyHealthBarFill == null)
         {
