@@ -46,10 +46,18 @@ public class EnemyCruiserHealth : MonoBehaviour
 
     private bool isHealthBarCoroutineRunning = false;
 
+    [SerializeField]
+    private AudioClip explosionSound;
+
+    private AudioSource audioSource;
+
     // Initialize health points
     void Start()
     {
         currentHealth = maxHealth;
+
+        // Get the AudioSource component on this GameObject
+        audioSource = GetComponent<AudioSource>();
 
         // Set spawnPoints from ScriptSpawnersManagement
         if (spawnersManager != null)
@@ -76,6 +84,7 @@ public class EnemyCruiserHealth : MonoBehaviour
         if (currentHealth <= 0)
         {
             currentHealth = 0;
+            PlayExplosionSound();
             Die();
         }
 
@@ -178,6 +187,14 @@ public class EnemyCruiserHealth : MonoBehaviour
         }
 
         isHealthBarCoroutineRunning = false;
+    }
+
+    private void PlayExplosionSound()
+    {
+        if (audioSource != null && explosionSound != null)
+        {
+            audioSource.PlayOneShot(explosionSound);
+        }
     }
 
     public float GetCurrentHealth()

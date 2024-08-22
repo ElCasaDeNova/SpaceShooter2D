@@ -12,7 +12,7 @@ public class PlayerOneShoot : MonoBehaviour
     private Transform bulletSpawner;
 
     [SerializeField]
-    private AudioClip shootSound; // Drag your sound effect here in the inspector
+    private AudioClip shootSound;
 
     private AudioSource audioSource;
 

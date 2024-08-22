@@ -21,9 +21,17 @@ public class EnemyHealth : MonoBehaviour
 
     private bool isHealthBarCoroutineRunning = false;
 
+    [SerializeField]
+    private AudioClip explosionSound;
+
+    private AudioSource audioSource;
+
     void Start()
     {
         currentHealth = maxHealth;
+
+        // Get the AudioSource component on this GameObject
+        audioSource = GetComponent<AudioSource>();
 
         if (enemyHealthBarBackground == null || enemyHealthBarFill == null)
         {
@@ -89,11 +97,24 @@ public class EnemyHealth : MonoBehaviour
 
     void Die()
     {
+
+
         // Hide the health bar immediately
         if (enemyHealthBarBackground != null && enemyHealthBarFill != null)
         {
             enemyHealthBarBackground.gameObject.SetActive(false);
             enemyHealthBarFill.gameObject.SetActive(false);
+        }
+
+        if (explosionSound != null)
+        {
+            GameObject tempAudioSource = new GameObject("TempAudioSource");
+            AudioSource tempSource = tempAudioSource.AddComponent<AudioSource>();
+            tempSource.clip = explosionSound;
+            tempSource.Play();
+
+            // Détruire le GameObject temporaire après que le son soit terminé
+            Destroy(tempAudioSource, explosionSound.length);
         }
 
         // Destroy the enemy GameObject
