@@ -26,6 +26,15 @@ public class ShipTranslate : MonoBehaviour
     [SerializeField]
     public Transform mapBorderTR; // Top-right corner of the map
 
+    [SerializeField]
+    private AudioSource dashAudioSource;
+    private AudioClip dashSound;
+
+    private void Start()
+    {
+        dashSound = dashAudioSource.clip;
+    }
+
     void Update()
     {
         if (IsReady())
@@ -61,6 +70,12 @@ public class ShipTranslate : MonoBehaviour
         isDashing = true;
         hasDashed = true;
         dashTime = dashDuration;
+
+        // Play the shooting sound
+        if (dashAudioSource != null && dashSound != null)
+        {
+            dashAudioSource.PlayOneShot(dashSound);
+        }
 
         while (dashTime > 0)
         {

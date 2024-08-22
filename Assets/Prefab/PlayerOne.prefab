@@ -114,6 +114,7 @@ MonoBehaviour:
   dashCooldown: 2
   mapBorderBL: {fileID: 0}
   mapBorderTR: {fileID: 0}
+  dashAudioSource: {fileID: 8963198276571701379}
 --- !u!114 &6754056205681287324
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -522,7 +523,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: f84a2bf3a6b43994a970dab1c4bc6fe8, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

@@ -22,13 +22,13 @@ public class EnemyHealth : MonoBehaviour
     private bool isHealthBarCoroutineRunning = false;
 
     [SerializeField]
-    private AudioClip explosionSound;
-
-    [SerializeField]
     private AudioSource audioSource;
+    private AudioClip explosionSound;
 
     void Start()
     {
+        explosionSound = audioSource.clip;
+
         currentHealth = maxHealth;
 
         if (enemyHealthBarBackground == null || enemyHealthBarFill == null)
