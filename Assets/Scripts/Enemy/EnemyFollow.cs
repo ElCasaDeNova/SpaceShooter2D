@@ -9,11 +9,6 @@ public class EnemyFollow : MonoBehaviour
 
     private Vector3 playerPosition;
 
-    void Start()
-    {
-
-    }
-
     void Update()
     {
         // Get World position of Enemy
