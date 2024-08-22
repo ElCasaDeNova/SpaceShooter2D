@@ -110,7 +110,7 @@ public class EnemyHealth : MonoBehaviour
             tempSource.clip = explosionSound;
             tempSource.Play();
 
-            // Détruire le GameObject temporaire après que le son soit terminé
+            // Destroy GameObject when sound is done
             Destroy(tempAudioSource, explosionSound.length);
         }
 

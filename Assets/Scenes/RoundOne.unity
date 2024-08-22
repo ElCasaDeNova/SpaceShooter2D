@@ -436,6 +436,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1938376419010059253, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
   m_PrefabInstance: {fileID: 193440702}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &248739502 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6801190943796533320, guid: e454c883775742c4bbda7271be72e3c4, type: 3}
+  m_PrefabInstance: {fileID: 3550343573685282994}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &253531877
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2311,10 +2322,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1201875080827316205, guid: 69af5ef9076beb5478f7d4e59a359de1, type: 3}
+      propertyPath: m_Volume
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3017013977261716302, guid: 69af5ef9076beb5478f7d4e59a359de1, type: 3}
       propertyPath: healthBarFill
       value: 
       objectReference: {fileID: 1154953555}
+    - target: {fileID: 3017013977261716302, guid: 69af5ef9076beb5478f7d4e59a359de1, type: 3}
+      propertyPath: damageFlashImage
+      value: 
+      objectReference: {fileID: 248739502}
     - target: {fileID: 8079297082724316504, guid: 69af5ef9076beb5478f7d4e59a359de1, type: 3}
       propertyPath: mapBorderBL
       value: 

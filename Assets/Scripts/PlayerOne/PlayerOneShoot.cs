@@ -12,9 +12,8 @@ public class PlayerOneShoot : MonoBehaviour
     private Transform bulletSpawner;
 
     [SerializeField]
-    private AudioClip shootSound;
-
     private AudioSource audioSource;
+    private AudioClip shootSound;
 
     private float timeSinceLastFire;
 
@@ -22,6 +21,7 @@ public class PlayerOneShoot : MonoBehaviour
     {
         // Get the AudioSource component on this GameObject
         audioSource = GetComponent<AudioSource>();
+        shootSound = audioSource.clip;
     }
 
     void Update()
