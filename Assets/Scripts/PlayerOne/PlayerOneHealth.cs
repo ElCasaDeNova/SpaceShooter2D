@@ -82,7 +82,7 @@ public class PlayerOneHealth : MonoBehaviour
 
         //LUMIERE ROUGE ICI
 
-        // Play the shooting sound
+        // Play the damage sound
         if (damageAudioSource != null && damageSound != null)
         {
             damageAudioSource.PlayOneShot(damageSound);
@@ -91,7 +91,7 @@ public class PlayerOneHealth : MonoBehaviour
 
     private IEnumerator FlashDamageScreen()
     {
-        // Afficher l'image rouge
+        // Display Red flash
         float elapsedTime = 0f;
 
         while (elapsedTime < flashDuration)
@@ -102,7 +102,7 @@ public class PlayerOneHealth : MonoBehaviour
             yield return null;
         }
 
-        // S'assurer que l'image est complètement transparente à la fin
+        // Image is transparent at the end
         damageFlashImage.color = new Color(damageFlashImage.color.r, damageFlashImage.color.g, damageFlashImage.color.b, 0f);
     }
 }
