@@ -69,12 +69,14 @@ public class EnemyCruiserHealth : MonoBehaviour
             Debug.LogWarning("ScriptSpawnersManagement reference not set.");
         }
 
-        // Initialize the top screen health bar
-        if (enemyHealthBarFill != null)
+        if (enemyHealthBarBackground == null || enemyHealthBarFill == null)
         {
-            enemyHealthBarBackground.gameObject.SetActive(false);
-            enemyHealthBarFill.gameObject.SetActive(false); // Hide the health bar at the start
+            return;
         }
+
+        // Initialize the top screen health bar
+        enemyHealthBarBackground.gameObject.SetActive(false);
+        enemyHealthBarFill.gameObject.SetActive(false);
     }
 
     // Method to take damage
@@ -84,7 +86,6 @@ public class EnemyCruiserHealth : MonoBehaviour
         if (currentHealth <= 0)
         {
             currentHealth = 0;
-            PlayExplosionSound();
             Die();
         }
 
@@ -120,6 +121,18 @@ public class EnemyCruiserHealth : MonoBehaviour
         {
             enemyHealthBarBackground.gameObject.SetActive(false);
             enemyHealthBarFill.gameObject.SetActive(false);
+        }
+
+        if (explosionSound != null)
+        {
+            // Create GameObject so the Cruiser Destruction doesn't block or wait for the explosion sound
+            GameObject tempAudioSource = new GameObject("TempAudioSource");
+            AudioSource tempSource = tempAudioSource.AddComponent<AudioSource>();
+            tempSource.clip = explosionSound;
+            tempSource.Play();
+
+            // Destroy GameObject when sound is done
+            Destroy(tempAudioSource, explosionSound.length);
         }
 
         // Destroy the cruiser object
@@ -187,14 +200,6 @@ public class EnemyCruiserHealth : MonoBehaviour
         }
 
         isHealthBarCoroutineRunning = false;
-    }
-
-    private void PlayExplosionSound()
-    {
-        if (audioSource != null && explosionSound != null)
-        {
-            audioSource.PlayOneShot(explosionSound);
-        }
     }
 
     public float GetCurrentHealth()

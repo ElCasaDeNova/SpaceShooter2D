@@ -35,7 +35,6 @@ public class EnemyHealth : MonoBehaviour
 
         if (enemyHealthBarBackground == null || enemyHealthBarFill == null)
         {
-            Debug.LogError("Health bar references are not assigned!");
             return;
         }
 
@@ -98,7 +97,6 @@ public class EnemyHealth : MonoBehaviour
     void Die()
     {
 
-
         // Hide the health bar immediately
         if (enemyHealthBarBackground != null && enemyHealthBarFill != null)
         {
@@ -108,6 +106,7 @@ public class EnemyHealth : MonoBehaviour
 
         if (explosionSound != null)
         {
+            // Create GameObject so the Enemy Destruction doesn't block or wait for the explosion sound
             GameObject tempAudioSource = new GameObject("TempAudioSource");
             AudioSource tempSource = tempAudioSource.AddComponent<AudioSource>();
             tempSource.clip = explosionSound;

@@ -25,8 +25,15 @@ public class EnemyCruiserShoot : MonoBehaviour
 
     [SerializeField]
     private float spreadAngle = 10f; // The spread angle in degrees
+
     [SerializeField]
     private Transform parentRoot;
+
+    [SerializeField]
+    private AudioClip shootSound;
+
+    [SerializeField]
+    private AudioSource audioSource;
 
     private Camera mainCamera;
     private float timeSinceLastFire;
@@ -72,6 +79,12 @@ public class EnemyCruiserShoot : MonoBehaviour
             {
                 rb.velocity = bulletDirection * bulletSpeed;
             }
+        }
+
+        // Play the shooting sound
+        if (audioSource != null && shootSound != null)
+        {
+            audioSource.PlayOneShot(shootSound);
         }
     }
 
