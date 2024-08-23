@@ -2448,10 +2448,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1201875080827316205, guid: 69af5ef9076beb5478f7d4e59a359de1, type: 3}
-      propertyPath: m_Volume
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3017013977261716302, guid: 69af5ef9076beb5478f7d4e59a359de1, type: 3}
       propertyPath: healthBarFill
       value: 
@@ -2468,10 +2464,6 @@ PrefabInstance:
       propertyPath: mapBorderTR
       value: 
       objectReference: {fileID: 1529329204}
-    - target: {fileID: 8963198276571701379, guid: 69af5ef9076beb5478f7d4e59a359de1, type: 3}
-      propertyPath: m_Pitch
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
