@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerOneHealth : MonoBehaviour
@@ -72,7 +73,8 @@ public class PlayerOneHealth : MonoBehaviour
             Destroy(tempAudioSource, deathSound.length);
         }
 
-        Debug.Log("You are dead");
+        // Debug.Log("You are dead");
+        SceneManager.LoadScene("GameOver");
     }
 
     void UpdateHealthBar()

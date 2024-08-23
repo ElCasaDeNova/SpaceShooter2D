@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77409c53e454ed34bb79bb93382e65c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 200
+  maxHealth: 20
   enemyHealthBarBackground: {fileID: 0}
   enemyHealthBarFill: {fileID: 0}
   enemyHealthBarVisibleTime: 1
