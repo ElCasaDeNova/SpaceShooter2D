@@ -82,8 +82,6 @@ public class PlayerOneHealth : MonoBehaviour
         float fillAmount = currentHealth / maxHealth;
         healthBarFill.fillAmount = fillAmount; // This updates the fill of the health bar
 
-        //LUMIERE ROUGE ICI
-
         // Play the damage sound
         if (damageAudioSource != null && damageSound != null)
         {

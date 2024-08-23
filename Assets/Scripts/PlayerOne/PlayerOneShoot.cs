@@ -40,6 +40,7 @@ public class PlayerOneShoot : MonoBehaviour
         GameObject bullet = BulletPooler.Instance.GetBullet();
         bullet.transform.position = bulletSpawner.position;
         bullet.transform.rotation = Quaternion.identity;
+        bullet.GetComponent<BulletCollisionHandler>().FromPlayer = true;
 
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         if (rb == null)
