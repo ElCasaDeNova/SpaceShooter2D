@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DeleteBullet : MonoBehaviour
@@ -17,9 +15,10 @@ public class DeleteBullet : MonoBehaviour
 
     void Update()
     {
+        // Retourne la balle au pool si elle est hors de la vue
         if (IsInvisibleToCamera(mainCamera))
         {
-            Destroy(gameObject); // Destroy the bullet itself
+            BulletPooler.Instance.ReturnBullet(gameObject); // Retourne la balle au pool
         }
     }
 

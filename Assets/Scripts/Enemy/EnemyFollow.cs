@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class EnemyFollow : MonoBehaviour
 {
@@ -10,11 +8,6 @@ public class EnemyFollow : MonoBehaviour
     public Transform playerOne;
 
     private Vector3 playerPosition;
-
-    void Start()
-    {
-
-    }
 
     void Update()
     {
@@ -26,6 +19,6 @@ public class EnemyFollow : MonoBehaviour
 
         // Apply rotation
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle + 90 )); // Add 90 degres because ennemy spawn upside down
+        transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle + 90)); // Add 90 degres because ennemy spawn upside down
     }
 }

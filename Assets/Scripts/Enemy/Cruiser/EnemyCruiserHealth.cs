@@ -1,4 +1,6 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyCruiserHealth : MonoBehaviour
 {
@@ -31,10 +33,31 @@ public class EnemyCruiserHealth : MonoBehaviour
     [SerializeField]
     private Transform bulletParent;
 
+    [SerializeField]
+    private Image enemyHealthBarBackground;
+
+    [SerializeField]
+    private Image enemyHealthBarFill; // Health bar displayed at the top of the screen
+
+    [SerializeField]
+    private float enemyHealthBarVisibleTime = 1f; // Time the health bar will be visible at the top of the screen
+
+    private static EnemyCruiserHealth lastHitEnemy; // To store the last enemy hit
+
+    private bool isHealthBarCoroutineRunning = false;
+
+    [SerializeField]
+    private AudioSource audioSource;
+    private AudioClip explosionSound;
+
+
     // Initialize health points
     void Start()
     {
         currentHealth = maxHealth;
+
+        // Get the AudioSource component on this GameObject
+        explosionSound = audioSource.clip;
 
         // Set spawnPoints from ScriptSpawnersManagement
         if (spawnersManager != null)
@@ -45,6 +68,15 @@ public class EnemyCruiserHealth : MonoBehaviour
         {
             Debug.LogWarning("ScriptSpawnersManagement reference not set.");
         }
+
+        if (enemyHealthBarBackground == null || enemyHealthBarFill == null)
+        {
+            return;
+        }
+
+        // Initialize the top screen health bar
+        enemyHealthBarBackground.gameObject.SetActive(false);
+        enemyHealthBarFill.gameObject.SetActive(false);
     }
 
     // Method to take damage
@@ -56,6 +88,23 @@ public class EnemyCruiserHealth : MonoBehaviour
             currentHealth = 0;
             Die();
         }
+
+        // Update and show the health bar at the top of the screen
+        if (enemyHealthBarFill != null && enemyHealthBarBackground != null)
+        {
+            // Show the health bar at the top of the screen
+            enemyHealthBarBackground.gameObject.SetActive(true);
+            enemyHealthBarFill.gameObject.SetActive(true);
+            UpdateHealthBar();
+
+            if (!isHealthBarCoroutineRunning)
+            {
+                StartCoroutine(HideEnemyHealthBarAfterDelay());
+            }
+        }
+
+        // Update the last hit enemy
+        lastHitEnemy = this;
     }
 
     // Method called when health reaches zero
@@ -66,6 +115,25 @@ public class EnemyCruiserHealth : MonoBehaviour
 
         // Spawn ships
         SpawnShips();
+
+        // Hide the health bar immediately
+        if (enemyHealthBarBackground != null && enemyHealthBarFill != null)
+        {
+            enemyHealthBarBackground.gameObject.SetActive(false);
+            enemyHealthBarFill.gameObject.SetActive(false);
+        }
+
+        if (explosionSound != null)
+        {
+            // Create GameObject so the Cruiser Destruction doesn't block or wait for the explosion sound
+            GameObject tempAudioSource = new GameObject("TempAudioSource");
+            AudioSource tempSource = tempAudioSource.AddComponent<AudioSource>();
+            tempSource.clip = explosionSound;
+            tempSource.Play();
+
+            // Destroy GameObject when sound is done
+            Destroy(tempAudioSource, explosionSound.length);
+        }
 
         // Destroy the cruiser object
         Destroy(gameObject);
@@ -108,5 +176,44 @@ public class EnemyCruiserHealth : MonoBehaviour
                 enemyShipShoot.parentRoot = bulletParent;
             }
         }
+    }
+
+    private void UpdateHealthBar()
+    {
+        if (enemyHealthBarFill != null)
+        {
+            float fillAmount = currentHealth / maxHealth;
+            enemyHealthBarFill.fillAmount = fillAmount;
+        }
+    }
+
+    private IEnumerator HideEnemyHealthBarAfterDelay()
+    {
+        isHealthBarCoroutineRunning = true;
+        yield return new WaitForSeconds(enemyHealthBarVisibleTime);
+
+        if (enemyHealthBarFill != null && enemyHealthBarBackground != null)
+        {
+            // Hide the health bar after the delay
+            enemyHealthBarBackground.gameObject.SetActive(false);
+            enemyHealthBarFill.gameObject.SetActive(false);
+        }
+
+        isHealthBarCoroutineRunning = false;
+    }
+
+    public float GetCurrentHealth()
+    {
+        return currentHealth;
+    }
+
+    public float GetMaxHealth()
+    {
+        return maxHealth;
+    }
+
+    public static EnemyCruiserHealth GetLastHitEnemy()
+    {
+        return lastHitEnemy;
     }
 }

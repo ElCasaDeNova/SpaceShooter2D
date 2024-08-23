@@ -24,7 +24,7 @@ public class CameraFollow : MonoBehaviour
 
         // Calculate Height and Width of the camera
         float camHeight = 2f * cam.orthographicSize;
-        float camWidth = camHeight * cam.aspect; 
+        float camWidth = camHeight * cam.aspect;
 
         // Limit the Camera position based on its height, width and the Map borders
         desiredPosition.x = Mathf.Clamp(desiredPosition.x, bottomLeftLimit.position.x + camWidth / 2, topRightLimit.position.x - camWidth / 2);
