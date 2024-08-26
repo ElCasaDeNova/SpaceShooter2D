@@ -1,5 +1,4 @@
 using System.Collections;
-using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -35,8 +34,6 @@ public class EnemyHealth : MonoBehaviour
     public GameObject parentCruiser;
     public string nextScene;
 
-
-
     void Start()
     {
         explosionSound = audioSource.clip;
@@ -68,27 +65,28 @@ public class EnemyHealth : MonoBehaviour
         if (currentHealth <= 0)
         {
             currentHealth = 0;
-            CheckIfParentsNoEnemiesLeft();
             Die();
         }
 
-        // Update and show the health bar at the top of the screen
         if (enemyHealthBarFill != null && enemyHealthBarBackground != null)
         {
-            // Show the health bar at the top of the screen
+            // Show the health bar
             enemyHealthBarBackground.gameObject.SetActive(true);
             enemyHealthBarFill.gameObject.SetActive(true);
             UpdateHealthBar();
 
             if (!isHealthBarCoroutineRunning)
             {
-                StartCoroutine(HideEnemyHealthBarAfterDelay());
+                if (gameObject.activeInHierarchy)  // Ensure the GameObject is active
+                {
+                    StartCoroutine(HideEnemyHealthBarAfterDelay());
+                }
             }
         }
 
-        // Update the last hit enemy
         lastHitEnemy = this;
     }
+
 
     private IEnumerator HideEnemyHealthBarAfterDelay()
     {
@@ -107,7 +105,6 @@ public class EnemyHealth : MonoBehaviour
 
     void Die()
     {
-
         // Hide the health bar immediately
         if (enemyHealthBarBackground != null && enemyHealthBarFill != null)
         {
@@ -117,24 +114,28 @@ public class EnemyHealth : MonoBehaviour
 
         if (explosionSound != null)
         {
-            // Create GameObject so the Enemy Destruction doesn't block or wait for the explosion sound
             GameObject tempAudioSource = new GameObject("TempAudioSource");
             AudioSource tempSource = tempAudioSource.AddComponent<AudioSource>();
             tempSource.clip = explosionSound;
             tempSource.Play();
-
-            // Destroy GameObject when sound is done
             Destroy(tempAudioSource, explosionSound.length);
         }
 
-        // Destroy the enemy GameObject
-        Destroy(gameObject);
+        // Return to the pool
+        ShipPooler.Instance.ReturnShip(gameObject);
     }
 
-    void CheckIfParentsNoEnemiesLeft() {
+    private void CheckIfNoEnemiesLeft()
+    {
         if (parentShip != null && parentCruiser != null)
         {
-            if (parentShip.transform.childCount == 0 && parentCruiser.transform.childCount == 0) {
+            Debug.Log("Checking for remaining enemies...");
+            Debug.Log("Ships count: " + parentShip.transform.childCount);
+            Debug.Log("Cruisers count: " + parentCruiser.transform.childCount);
+
+            if (parentShip.transform.childCount == 1 && parentCruiser.transform.childCount == 0)
+            {
+                Debug.Log("Victory condition met!");
                 SceneManager.LoadScene(nextScene);
             }
         }

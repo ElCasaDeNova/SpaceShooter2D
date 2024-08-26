@@ -6,12 +6,21 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 3556db8e2fe81ff4083e8f3987dfcb70
+  - enabled: 1
     path: Assets/Scenes/RoundOne.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/RoundTwo.unity
+    guid: d8b2199a320117e469b0b92d85685e59
+  - enabled: 1
+    path: Assets/Scenes/RoundThree.unity
+    guid: a1523f18e55682d4eae37e1da5e8a1bb
   - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: 5491bc1f52c266f45820085faf41f3b6
   - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
-    guid: 3556db8e2fe81ff4083e8f3987dfcb70
+    path: Assets/Scenes/VictoryScene.unity
+    guid: 8428509ee203e0448ae3d9818d93f173
   m_configObjects: {}

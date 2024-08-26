@@ -59,7 +59,6 @@ public class EnemyCruiserHealth : MonoBehaviour
     [SerializeField]
     private string nextScene;
 
-
     // Initialize health points
     void Start()
     {
@@ -166,7 +165,14 @@ public class EnemyCruiserHealth : MonoBehaviour
             Transform spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
 
             // Instantiate the ship at the chosen spawn point
-            GameObject shipInstance = Instantiate(shipPrefab, spawnPoint.position, spawnPoint.rotation);
+            GameObject shipInstance = ShipPooler.Instance.GetShip();
+
+            // Set the position and rotation
+            shipInstance.transform.position = spawnPoint.position;
+            shipInstance.transform.rotation = spawnPoint.rotation;
+
+            // Set the parent
+            shipInstance.transform.SetParent(shipParentRoot);
 
             // Assign the playerOne reference to the EnemyFollow script on the ship
             EnemyFollow enemyFollow = shipInstance.GetComponent<EnemyFollow>();
@@ -174,9 +180,6 @@ public class EnemyCruiserHealth : MonoBehaviour
             {
                 enemyFollow.playerOne = playerOne;
             }
-
-            // Assign the Ship parent to the Ship
-            shipInstance.transform.SetParent(shipParentRoot);
 
             // Assign the parent to the Ship bullets
             EnemyShipShoot enemyShipShoot = shipInstance.GetComponent<EnemyShipShoot>();
