@@ -187,13 +187,25 @@ PrefabInstance:
       value: EnemyCruiser 6
       objectReference: {fileID: 0}
     - target: {fileID: 4526935656596338704, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
+      propertyPath: nextScene
+      value: RoundTwo
+      objectReference: {fileID: 0}
+    - target: {fileID: 4526935656596338704, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
       propertyPath: playerOne
       value: 
       objectReference: {fileID: 649539075}
     - target: {fileID: 4526935656596338704, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
+      propertyPath: parentShip
+      value: 
+      objectReference: {fileID: 889960948}
+    - target: {fileID: 4526935656596338704, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
       propertyPath: bulletParent
       value: 
       objectReference: {fileID: 2032146501}
+    - target: {fileID: 4526935656596338704, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
+      propertyPath: parentCruiser
+      value: 
+      objectReference: {fileID: 1600819708}
     - target: {fileID: 4526935656596338704, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
       propertyPath: shipParentRoot
       value: 
@@ -391,13 +403,25 @@ PrefabInstance:
       value: EnemyCruiser 1
       objectReference: {fileID: 0}
     - target: {fileID: 4526935656596338704, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
+      propertyPath: nextScene
+      value: RoundTwo
+      objectReference: {fileID: 0}
+    - target: {fileID: 4526935656596338704, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
       propertyPath: playerOne
       value: 
       objectReference: {fileID: 649539075}
     - target: {fileID: 4526935656596338704, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
+      propertyPath: parentShip
+      value: 
+      objectReference: {fileID: 889960948}
+    - target: {fileID: 4526935656596338704, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
       propertyPath: bulletParent
       value: 
       objectReference: {fileID: 2032146501}
+    - target: {fileID: 4526935656596338704, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
+      propertyPath: parentCruiser
+      value: 
+      objectReference: {fileID: 1600819708}
     - target: {fileID: 4526935656596338704, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
       propertyPath: shipParentRoot
       value: 
@@ -512,13 +536,25 @@ PrefabInstance:
       value: EnemyCruiser 7
       objectReference: {fileID: 0}
     - target: {fileID: 4526935656596338704, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
+      propertyPath: nextScene
+      value: RoundTwo
+      objectReference: {fileID: 0}
+    - target: {fileID: 4526935656596338704, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
       propertyPath: playerOne
       value: 
       objectReference: {fileID: 649539075}
     - target: {fileID: 4526935656596338704, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
+      propertyPath: parentShip
+      value: 
+      objectReference: {fileID: 889960948}
+    - target: {fileID: 4526935656596338704, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
       propertyPath: bulletParent
       value: 
       objectReference: {fileID: 2032146501}
+    - target: {fileID: 4526935656596338704, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
+      propertyPath: parentCruiser
+      value: 
+      objectReference: {fileID: 1600819708}
     - target: {fileID: 4526935656596338704, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
       propertyPath: shipParentRoot
       value: 
@@ -846,13 +882,25 @@ PrefabInstance:
       value: EnemyCruiser 3
       objectReference: {fileID: 0}
     - target: {fileID: 4526935656596338704, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
+      propertyPath: nextScene
+      value: RoundTwo
+      objectReference: {fileID: 0}
+    - target: {fileID: 4526935656596338704, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
       propertyPath: playerOne
       value: 
       objectReference: {fileID: 649539075}
     - target: {fileID: 4526935656596338704, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
+      propertyPath: parentShip
+      value: 
+      objectReference: {fileID: 889960948}
+    - target: {fileID: 4526935656596338704, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
       propertyPath: bulletParent
       value: 
       objectReference: {fileID: 2032146501}
+    - target: {fileID: 4526935656596338704, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
+      propertyPath: parentCruiser
+      value: 
+      objectReference: {fileID: 1600819708}
     - target: {fileID: 4526935656596338704, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
       propertyPath: shipParentRoot
       value: 
@@ -1147,13 +1195,25 @@ PrefabInstance:
       value: EnemyCruiser 2
       objectReference: {fileID: 0}
     - target: {fileID: 4526935656596338704, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
+      propertyPath: nextScene
+      value: RoundTwo
+      objectReference: {fileID: 0}
+    - target: {fileID: 4526935656596338704, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
       propertyPath: playerOne
       value: 
       objectReference: {fileID: 649539075}
     - target: {fileID: 4526935656596338704, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
+      propertyPath: parentShip
+      value: 
+      objectReference: {fileID: 889960948}
+    - target: {fileID: 4526935656596338704, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
       propertyPath: bulletParent
       value: 
       objectReference: {fileID: 2032146501}
+    - target: {fileID: 4526935656596338704, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
+      propertyPath: parentCruiser
+      value: 
+      objectReference: {fileID: 1600819708}
     - target: {fileID: 4526935656596338704, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
       propertyPath: shipParentRoot
       value: 
@@ -1373,13 +1433,25 @@ PrefabInstance:
       value: EnemyCruiser 4
       objectReference: {fileID: 0}
     - target: {fileID: 4526935656596338704, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
+      propertyPath: nextScene
+      value: RoundTwo
+      objectReference: {fileID: 0}
+    - target: {fileID: 4526935656596338704, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
       propertyPath: playerOne
       value: 
       objectReference: {fileID: 649539075}
     - target: {fileID: 4526935656596338704, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
+      propertyPath: parentShip
+      value: 
+      objectReference: {fileID: 889960948}
+    - target: {fileID: 4526935656596338704, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
       propertyPath: bulletParent
       value: 
       objectReference: {fileID: 2032146501}
+    - target: {fileID: 4526935656596338704, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
+      propertyPath: parentCruiser
+      value: 
+      objectReference: {fileID: 1600819708}
     - target: {fileID: 4526935656596338704, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
       propertyPath: shipParentRoot
       value: 
@@ -1742,13 +1814,25 @@ PrefabInstance:
       value: EnemyCruiser 5
       objectReference: {fileID: 0}
     - target: {fileID: 4526935656596338704, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
+      propertyPath: nextScene
+      value: RoundTwo
+      objectReference: {fileID: 0}
+    - target: {fileID: 4526935656596338704, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
       propertyPath: playerOne
       value: 
       objectReference: {fileID: 649539075}
     - target: {fileID: 4526935656596338704, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
+      propertyPath: parentShip
+      value: 
+      objectReference: {fileID: 889960948}
+    - target: {fileID: 4526935656596338704, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
       propertyPath: bulletParent
       value: 
       objectReference: {fileID: 2032146501}
+    - target: {fileID: 4526935656596338704, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
+      propertyPath: parentCruiser
+      value: 
+      objectReference: {fileID: 1600819708}
     - target: {fileID: 4526935656596338704, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
       propertyPath: shipParentRoot
       value: 
