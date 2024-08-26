@@ -1,5 +1,7 @@
 using System.Collections;
+using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class EnemyHealth : MonoBehaviour
@@ -10,12 +12,15 @@ public class EnemyHealth : MonoBehaviour
 
     [SerializeField]
     private Image enemyHealthBarBackground;
+    public Image EnemyHealthBarBackground { set { EnemyHealthBarBackground = value; } }
 
     [SerializeField]
     private Image enemyHealthBarFill; // Health bar displayed at the top of the screen
+    public Image EnemyHealthBarFill { set { EnemyHealthBarFill = value; } }
 
     [SerializeField]
     private float enemyHealthBarVisibleTime = 1f; // Time the health bar will be visible at the top of the screen
+
 
     private static EnemyHealth lastHitEnemy; // To store the last enemy hit
 
@@ -24,6 +29,13 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField]
     private AudioSource audioSource;
     private AudioClip explosionSound;
+
+    // For Wining Conditions
+    public GameObject parentShip;
+    public GameObject parentCruiser;
+    public string nextScene;
+
+
 
     void Start()
     {
@@ -56,6 +68,7 @@ public class EnemyHealth : MonoBehaviour
         if (currentHealth <= 0)
         {
             currentHealth = 0;
+            CheckIfParentsNoEnemiesLeft();
             Die();
         }
 
@@ -116,6 +129,24 @@ public class EnemyHealth : MonoBehaviour
 
         // Destroy the enemy GameObject
         Destroy(gameObject);
+    }
+
+    void CheckIfParentsNoEnemiesLeft() {
+        if (parentShip != null && parentCruiser != null)
+        {
+            if (parentShip.transform.childCount == 0 && parentCruiser.transform.childCount == 0) {
+                SceneManager.LoadScene(nextScene);
+            }
+        }
+    }
+
+    public void AssignHealthBar(Image background, Image fill)
+    {
+        enemyHealthBarBackground = background;
+        enemyHealthBarFill = fill;
+
+        // Mettre à jour la barre de santé au départ
+        UpdateHealthBar();
     }
 
     public float GetCurrentHealth()

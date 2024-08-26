@@ -39,6 +39,7 @@ public class EnemyCruiserHealth : MonoBehaviour
     [SerializeField]
     private Image enemyHealthBarFill; // Health bar displayed at the top of the screen
 
+
     [SerializeField]
     private float enemyHealthBarVisibleTime = 1f; // Time the health bar will be visible at the top of the screen
 
@@ -49,6 +50,14 @@ public class EnemyCruiserHealth : MonoBehaviour
     [SerializeField]
     private AudioSource audioSource;
     private AudioClip explosionSound;
+
+    // For Wining Conditions
+    [SerializeField]
+    private GameObject parentShip;
+    [SerializeField]
+    private GameObject parentCruiser;
+    [SerializeField]
+    private string nextScene;
 
 
     // Initialize health points
@@ -174,6 +183,16 @@ public class EnemyCruiserHealth : MonoBehaviour
             if (enemyShipShoot != null)
             {
                 enemyShipShoot.parentRoot = bulletParent;
+            }
+
+            //Assign the HealthBar to the Ship
+            EnemyHealth enemyHealth = shipInstance.GetComponent<EnemyHealth>();
+            if (enemyHealth != null)
+            {
+                enemyHealth.AssignHealthBar(enemyHealthBarBackground, enemyHealthBarFill);
+                enemyHealth.parentShip = parentShip;
+                enemyHealth.parentCruiser = parentCruiser;
+                enemyHealth.nextScene = nextScene;
             }
         }
     }
