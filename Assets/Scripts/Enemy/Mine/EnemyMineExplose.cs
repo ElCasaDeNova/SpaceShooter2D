@@ -20,24 +20,32 @@ public class EnemyMineExplose : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        //TODO Shoot on Mine make it explode
-
         // If Player collides
         if (other.gameObject.TryGetComponent<PlayerOneHealth>(out PlayerOneHealth player))
         {
-            if (explosionSound != null)
-            {
-                // Create GameObject so the Cruiser Destruction doesn't block or wait for the explosion sound
-                GameObject tempAudioSource = new GameObject("TempAudioSource");
-                AudioSource tempSource = tempAudioSource.AddComponent<AudioSource>();
-                tempSource.clip = explosionSound;
-                tempSource.Play();
-
-                // Destroy GameObject when sound is done
-                Destroy(tempAudioSource, explosionSound.length);
-            }
+            // TODO Explosion has a radius
             player.TakeDamage(damage);
-            Destroy(mine);
+            Explose();
         }
+    }
+
+    public void Explose()
+    {
+        // TODO Explosion has an Animation
+
+        if (explosionSound != null)
+        {
+            // Create GameObject so the Cruiser Destruction doesn't block or wait for the explosion sound
+            GameObject tempAudioSource = new GameObject("TempAudioSource");
+            AudioSource tempSource = tempAudioSource.AddComponent<AudioSource>();
+            tempSource.clip = explosionSound;
+            tempSource.Play();
+
+            // Destroy GameObject when sound is done
+            Destroy(tempAudioSource, explosionSound.length);
+        }
+
+        // TODO Make MinePooler
+        Destroy(mine);
     }
 }

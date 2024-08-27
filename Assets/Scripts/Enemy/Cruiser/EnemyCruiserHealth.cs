@@ -51,14 +51,6 @@ public class EnemyCruiserHealth : MonoBehaviour
     private AudioSource audioSource;
     private AudioClip explosionSound;
 
-    // For Wining Conditions
-    [SerializeField]
-    private GameObject parentShip;
-    [SerializeField]
-    private GameObject parentCruiser;
-    [SerializeField]
-    private string nextScene;
-
     // Initialize health points
     void Start()
     {
@@ -193,9 +185,6 @@ public class EnemyCruiserHealth : MonoBehaviour
             if (enemyHealth != null)
             {
                 enemyHealth.AssignHealthBar(enemyHealthBarBackground, enemyHealthBarFill);
-                enemyHealth.parentShip = parentShip;
-                enemyHealth.parentCruiser = parentCruiser;
-                enemyHealth.nextScene = nextScene;
             }
         }
     }

@@ -69,6 +69,7 @@ public class EnemyCruiserShoot : MonoBehaviour
             Vector2 bulletDirection = new Vector2(Mathf.Cos(currentAngle * Mathf.Deg2Rad), Mathf.Sin(currentAngle * Mathf.Deg2Rad)).normalized;
 
             GameObject bullet = BulletPooler.Instance.GetBullet();
+            bullet.GetComponent<BulletCollisionHandler>().FromPlayer = false;
             bullet.transform.position = bulletSpawner.position;
             bullet.transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(bulletDirection.y, bulletDirection.x) * Mathf.Rad2Deg - 90f);
 

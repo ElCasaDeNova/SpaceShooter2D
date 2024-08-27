@@ -40,6 +40,8 @@ public class EnemyShipShoot : MonoBehaviour
         GameObject bullet = BulletPooler.Instance.GetBullet();
         bullet.transform.position = bulletSpawner.position;
         bullet.transform.rotation = Quaternion.identity;
+        bullet.GetComponent<BulletCollisionHandler>().FromPlayer = false;
+
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
 
         bullet.transform.SetParent(parentRoot);

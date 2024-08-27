@@ -19,7 +19,7 @@ public class BulletCollisionHandler : MonoBehaviour
             if (other.gameObject.TryGetComponent<PlayerOneHealth>(out PlayerOneHealth player))
             {
                 player.TakeDamage(damage);
-                Destroy(bullet);
+                BulletPooler.Instance.ReturnBullet(gameObject);
             }
         }
         else
@@ -28,14 +28,22 @@ public class BulletCollisionHandler : MonoBehaviour
             if (other.gameObject.TryGetComponent<EnemyHealth>(out EnemyHealth enemy))
             {
                 enemy.TakeDamage(damage);
-                Destroy(bullet);
+                BulletPooler.Instance.ReturnBullet(gameObject);
             }
+
+            // If Mine is touched
+            if (other.gameObject.TryGetComponent<EnemyMineExplose>(out EnemyMineExplose enemyMine))
+            {
+                enemyMine.Explose();
+                BulletPooler.Instance.ReturnBullet(gameObject);
+            }
+
 
             // If EnemyCruiser is touched
             if (other.gameObject.TryGetComponent<EnemyCruiserHealth>(out EnemyCruiserHealth enemyCruiser))
             {
                 enemyCruiser.TakeDamage(damage);
-                Destroy(bullet);
+                BulletPooler.Instance.ReturnBullet(gameObject);
             }
         }
 

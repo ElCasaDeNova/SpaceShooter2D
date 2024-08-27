@@ -1,6 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class EnemyHealth : MonoBehaviour
@@ -123,22 +122,6 @@ public class EnemyHealth : MonoBehaviour
 
         // Return to the pool
         ShipPooler.Instance.ReturnShip(gameObject);
-    }
-
-    private void CheckIfNoEnemiesLeft()
-    {
-        if (parentShip != null && parentCruiser != null)
-        {
-            Debug.Log("Checking for remaining enemies...");
-            Debug.Log("Ships count: " + parentShip.transform.childCount);
-            Debug.Log("Cruisers count: " + parentCruiser.transform.childCount);
-
-            if (parentShip.transform.childCount == 1 && parentCruiser.transform.childCount == 0)
-            {
-                Debug.Log("Victory condition met!");
-                SceneManager.LoadScene(nextScene);
-            }
-        }
     }
 
     public void AssignHealthBar(Image background, Image fill)

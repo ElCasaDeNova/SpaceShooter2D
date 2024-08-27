@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ShipPooler : MonoBehaviour
 {
@@ -9,6 +10,14 @@ public class ShipPooler : MonoBehaviour
     public int initialPoolSize = 20; // Initial pool size
 
     private Queue<GameObject> shipPool;
+
+    // For Wining Conditions
+    [SerializeField]
+    private GameObject parentShip;
+    [SerializeField]
+    private GameObject parentCruiser;
+    [SerializeField]
+    private string nextScene;
 
     private void Awake()
     {
@@ -55,5 +64,26 @@ public class ShipPooler : MonoBehaviour
         ship.SetActive(false);
         ship.transform.SetParent(transform);
         shipPool.Enqueue(ship);
+
+        //Change Scene if Win
+        CheckIfNoEnemiesLeft();
+    }
+
+    private void CheckIfNoEnemiesLeft()
+    {
+        if (parentShip != null && parentCruiser != null)
+        {
+            /* 
+            Debug.Log("Checking for remaining enemies...");
+            Debug.Log("Ships count: " + parentShip.transform.childCount);
+            Debug.Log("Cruisers count: " + parentCruiser.transform.childCount);
+            */
+
+            if (parentShip.transform.childCount == 0 && parentCruiser.transform.childCount == 0)
+            {
+                Debug.Log("Victory condition met!");
+                SceneManager.LoadScene(nextScene);
+            }
+        }
     }
 }
