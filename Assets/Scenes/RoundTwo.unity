@@ -2350,9 +2350,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 889960949}
   - {fileID: 1600819709}
   - {fileID: 766717408}
-  - {fileID: 889960949}
   - {fileID: 1792504588}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2833,6 +2833,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shipPrefab: {fileID: 5966500824460191478, guid: 65512fdc2e53ec046ac92ad616040ce3, type: 3}
   initialPoolSize: 10
+  parentShip: {fileID: 889960948}
+  parentCruiser: {fileID: 1600819708}
+  nextScene: RoundThree
 --- !u!114 &1631437053 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5547698199276254784, guid: e454c883775742c4bbda7271be72e3c4, type: 3}
