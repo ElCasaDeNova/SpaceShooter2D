@@ -220,7 +220,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5547698199276254784, guid: e454c883775742c4bbda7271be72e3c4, type: 3}
       propertyPath: m_Type
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5547698199276254784, guid: e454c883775742c4bbda7271be72e3c4, type: 3}
       propertyPath: m_Sprite
@@ -236,7 +236,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8729930886085861274, guid: e454c883775742c4bbda7271be72e3c4, type: 3}
       propertyPath: m_Type
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8729930886085861274, guid: e454c883775742c4bbda7271be72e3c4, type: 3}
       propertyPath: m_Sprite
@@ -3076,6 +3076,10 @@ PrefabInstance:
       propertyPath: damageFlashImage
       value: 
       objectReference: {fileID: 102549072}
+    - target: {fileID: 3017013977261716302, guid: 69af5ef9076beb5478f7d4e59a359de1, type: 3}
+      propertyPath: healthBarBackGround
+      value: 
+      objectReference: {fileID: 102549075}
     - target: {fileID: 8079297082724316504, guid: 69af5ef9076beb5478f7d4e59a359de1, type: 3}
       propertyPath: dashSpeed
       value: 45

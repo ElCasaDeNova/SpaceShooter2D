@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Unity.Mathematics;
 
 public class PlayerOneHealth : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class PlayerOneHealth : MonoBehaviour
 
     [SerializeField]
     private Image healthBarFill;
+    [SerializeField]
+    private Image healthBarBackGround;
 
     [SerializeField]
     private AudioSource damageAudioSource;
@@ -78,16 +81,21 @@ public class PlayerOneHealth : MonoBehaviour
     }
 
     void UpdateHealthBar()
-    {
-        float fillAmount = currentHealth / maxHealth;
-        healthBarFill.fillAmount = fillAmount; // This updates the fill of the health bar
+    {   // Calculate the current health ratio of the last hit enemy
+        float healthRatio = currentHealth / maxHealth;
 
-        // Play the damage sound
+        // Update the width of the health bar to reflect the current health of the last hit enemy
+        RectTransform rectTransform = healthBarFill.rectTransform;
+        float originalWidth = healthBarBackGround.rectTransform.sizeDelta.x;
+        rectTransform.sizeDelta = new Vector2(originalWidth * healthRatio, rectTransform.sizeDelta.y);
+
+        // Play the damage sound if the audio source and sound clip are available
         if (damageAudioSource != null && damageSound != null)
         {
             damageAudioSource.PlayOneShot(damageSound);
         }
     }
+
 
     private IEnumerator FlashDamageScreen()
     {

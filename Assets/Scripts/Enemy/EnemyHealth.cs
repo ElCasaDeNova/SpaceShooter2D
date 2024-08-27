@@ -51,10 +51,16 @@ public class EnemyHealth : MonoBehaviour
 
     private void UpdateHealthBar()
     {
-        if (enemyHealthBarFill != null)
+        // Check if an enemy was hit last
+        if (lastHitEnemy != null)
         {
-            float fillAmount = currentHealth / maxHealth;
-            enemyHealthBarFill.fillAmount = fillAmount;
+            // Calculate the current health ratio of the last hit enemy
+            float healthRatio = lastHitEnemy.currentHealth / lastHitEnemy.maxHealth;
+
+            // Update the width of the health bar to reflect the current health of the last hit enemy
+            RectTransform rectTransform = enemyHealthBarFill.rectTransform;
+            float originalWidth = enemyHealthBarBackground.rectTransform.sizeDelta.x;
+            rectTransform.sizeDelta = new Vector2(originalWidth * healthRatio, rectTransform.sizeDelta.y);
         }
     }
 

@@ -123,8 +123,10 @@ MonoBehaviour:
   enemyHealthBarBackground: {fileID: 0}
   enemyHealthBarFill: {fileID: 0}
   enemyHealthBarVisibleTime: 1
-  explosionSound: {fileID: 8300000, guid: d11230aada070a148ad9cac9ac59514d, type: 3}
   audioSource: {fileID: 514612222892663861}
+  parentShip: {fileID: 0}
+  parentCruiser: {fileID: 0}
+  nextScene: 
 --- !u!114 &1875844359110611177
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,7 +141,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 1448417955098605964, guid: 5fcab481947f13f4eb53a1ceaa14fb40, type: 3}
   bulletSpeed: 5
-  fireInterval: 0.5
+  fireInterval: 0.6
   bulletSpawner: {fileID: 5826222561397044505}
   parentRoot: {fileID: 0}
   shootSound: {fileID: 8300000, guid: 23d80b5297162e9459fea98d1bec36f4, type: 3}

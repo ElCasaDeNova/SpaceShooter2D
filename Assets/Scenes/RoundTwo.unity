@@ -482,6 +482,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2099441142433684905, guid: e454c883775742c4bbda7271be72e3c4, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2099441142433684905, guid: e454c883775742c4bbda7271be72e3c4, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -250
+      objectReference: {fileID: 0}
     - target: {fileID: 2508987438611332313, guid: e454c883775742c4bbda7271be72e3c4, type: 3}
       propertyPath: shipTranslate
       value: 
@@ -572,7 +580,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5547698199276254784, guid: e454c883775742c4bbda7271be72e3c4, type: 3}
       propertyPath: m_Type
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5547698199276254784, guid: e454c883775742c4bbda7271be72e3c4, type: 3}
       propertyPath: m_Sprite
@@ -588,7 +596,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8729930886085861274, guid: e454c883775742c4bbda7271be72e3c4, type: 3}
       propertyPath: m_Type
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8729930886085861274, guid: e454c883775742c4bbda7271be72e3c4, type: 3}
       propertyPath: m_Sprite
@@ -1661,6 +1669,17 @@ Camera:
   m_CorrespondingSourceObject: {fileID: 1670119154087429299, guid: 8f1cbcfe2eddb7f4486db0be13949548, type: 3}
   m_PrefabInstance: {fileID: 3412824311676989991}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &984008489 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6147823781406105342, guid: e454c883775742c4bbda7271be72e3c4, type: 3}
+  m_PrefabInstance: {fileID: 241932099}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &994433445
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3539,6 +3558,10 @@ PrefabInstance:
       propertyPath: damageFlashImage
       value: 
       objectReference: {fileID: 2140097696}
+    - target: {fileID: 3017013977261716302, guid: 69af5ef9076beb5478f7d4e59a359de1, type: 3}
+      propertyPath: healthBarBackGround
+      value: 
+      objectReference: {fileID: 984008489}
     - target: {fileID: 8079297082724316504, guid: 69af5ef9076beb5478f7d4e59a359de1, type: 3}
       propertyPath: dashSpeed
       value: 45
