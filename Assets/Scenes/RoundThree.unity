@@ -485,7 +485,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6274513452741593257, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
       propertyPath: numberOfBullets
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -722,7 +722,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6274513452741593257, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
       propertyPath: numberOfBullets
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -875,7 +875,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6274513452741593257, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
       propertyPath: numberOfBullets
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -997,7 +997,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6274513452741593257, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
       propertyPath: numberOfBullets
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1447,7 +1447,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6274513452741593257, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
       propertyPath: numberOfBullets
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1569,7 +1569,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6274513452741593257, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
       propertyPath: numberOfBullets
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1848,7 +1848,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6274513452741593257, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
       propertyPath: numberOfBullets
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2306,7 +2306,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6274513452741593257, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
       propertyPath: numberOfBullets
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2428,7 +2428,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6274513452741593257, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
       propertyPath: numberOfBullets
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3218,7 +3218,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6274513452741593257, guid: 1ae1c9dc2885a1840a3f214864606376, type: 3}
       propertyPath: numberOfBullets
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
