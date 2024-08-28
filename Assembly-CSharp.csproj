@@ -68,12 +68,14 @@
     <Compile Include="Assets\Scripts\Utils\BulletPooler.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\DropdownSample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexColorCycler.cs" />
+    <Compile Include="Assets\Scripts\Utils\AudioSourcePooler.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\EnvMapAnimator.cs" />
     <Compile Include="Assets\Scripts\UI\GenerateCursor.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SimpleScript.cs" />
     <Compile Include="Assets\Scripts\UI\StartButton.cs" />
+    <Compile Include="Assets\Scripts\Utils\CruiserPooler.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
     <Compile Include="Assets\Scripts\PlayerOne\PlayerOneShoot.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyHealth.cs" />
@@ -103,6 +105,7 @@
     <Compile Include="Assets\Scripts\Enemy\EnemyFollow.cs" />
     <Compile Include="Assets\Scripts\PlayerOne\PlayerOneHealth.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
+    <Compile Include="Assets\Scripts\Utils\MinePooler.cs" />
     <Compile Include="Assets\Scripts\Enemy\Spawners\ScriptSpawnersManagement.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SkewTextExample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />

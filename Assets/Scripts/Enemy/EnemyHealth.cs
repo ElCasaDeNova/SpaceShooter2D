@@ -119,15 +119,24 @@ public class EnemyHealth : MonoBehaviour
 
         if (explosionSound != null)
         {
-            GameObject tempAudioSource = new GameObject("TempAudioSource");
-            AudioSource tempSource = tempAudioSource.AddComponent<AudioSource>();
-            tempSource.clip = explosionSound;
-            tempSource.Play();
-            Destroy(tempAudioSource, explosionSound.length);
+            AudioSource audioSourceInstance = AudioSourcePooler.Instance.GetAudioSource();
+            audioSourceInstance.clip = explosionSound;
+            audioSourceInstance.Play();
+
+            // Return AudioSource to pool after the sound has finished playing
+            StartCoroutine(ReturnAudioSourceToPoolAfterPlay(audioSourceInstance));
         }
 
         // Return to the pool
         ShipPooler.Instance.ReturnShip(gameObject);
+    }
+
+    private IEnumerator ReturnAudioSourceToPoolAfterPlay(AudioSource audioSource)
+    {
+        // Wait for the duration of the clip
+        yield return new WaitForSeconds(audioSource.clip.length);
+        // Return the AudioSource to the pool
+        AudioSourcePooler.Instance.ReturnAudioSource(audioSource);
     }
 
     public void AssignHealthBar(Image background, Image fill)

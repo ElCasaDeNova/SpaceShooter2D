@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class EnemyMineExplose : MonoBehaviour
@@ -35,17 +36,23 @@ public class EnemyMineExplose : MonoBehaviour
 
         if (explosionSound != null)
         {
-            // Create GameObject so the Cruiser Destruction doesn't block or wait for the explosion sound
-            GameObject tempAudioSource = new GameObject("TempAudioSource");
-            AudioSource tempSource = tempAudioSource.AddComponent<AudioSource>();
-            tempSource.clip = explosionSound;
-            tempSource.Play();
+            AudioSource audioSourceInstance = AudioSourcePooler.Instance.GetAudioSource();
+            audioSourceInstance.clip = explosionSound;
+            audioSourceInstance.Play();
 
-            // Destroy GameObject when sound is done
-            Destroy(tempAudioSource, explosionSound.length);
+            // Return AudioSource to pool after the sound has finished playing
+            StartCoroutine(ReturnAudioSourceToPoolAfterPlay(audioSourceInstance));
         }
 
         // TODO Make MinePooler
-        Destroy(mine);
+        MinePooler.Instance.ReturnMine(mine);
+    }
+
+    private IEnumerator ReturnAudioSourceToPoolAfterPlay(AudioSource audioSource)
+    {
+        // Wait for the duration of the clip
+        yield return new WaitForSeconds(audioSource.clip.length);
+        // Return the AudioSource to the pool
+        AudioSourcePooler.Instance.ReturnAudioSource(audioSource);
     }
 }

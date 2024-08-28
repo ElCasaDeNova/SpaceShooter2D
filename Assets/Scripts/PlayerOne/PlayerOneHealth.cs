@@ -65,14 +65,12 @@ public class PlayerOneHealth : MonoBehaviour
     {
         if (deathSound != null)
         {
-            // Create GameObject so the Enemy Destruction doesn't block or wait for the explosion sound
-            GameObject tempAudioSource = new GameObject("TempAudioSource");
-            AudioSource tempSource = tempAudioSource.AddComponent<AudioSource>();
-            tempSource.clip = deathSound;
-            tempSource.Play();
+            AudioSource audioSourceInstance = AudioSourcePooler.Instance.GetAudioSource();
+            audioSourceInstance.clip = deathSound;
+            audioSourceInstance.Play();
 
-            // Destroy GameObject when sound is done
-            Destroy(tempAudioSource, deathSound.length);
+            // Return AudioSource to pool after the sound has finished playing
+            StartCoroutine(ReturnAudioSourceToPoolAfterPlay(audioSourceInstance));
         }
 
         // Debug.Log("You are dead");
@@ -111,5 +109,13 @@ public class PlayerOneHealth : MonoBehaviour
 
         // Image is transparent at the end
         damageFlashImage.color = new Color(damageFlashImage.color.r, damageFlashImage.color.g, damageFlashImage.color.b, 0f);
+    }
+
+    private IEnumerator ReturnAudioSourceToPoolAfterPlay(AudioSource audioSource)
+    {
+        // Wait for the duration of the clip
+        yield return new WaitForSeconds(audioSource.clip.length);
+        // Return the AudioSource to the pool
+        AudioSourcePooler.Instance.ReturnAudioSource(audioSource);
     }
 }
