@@ -148,6 +148,7 @@ MonoBehaviour:
   spawnersManager: {fileID: 0}
   playerOne: {fileID: 0}
   shipParentRoot: {fileID: 0}
+  shipMaxHealth: 100
   bulletParent: {fileID: 0}
   enemyHealthBarBackground: {fileID: 0}
   enemyHealthBarFill: {fileID: 0}

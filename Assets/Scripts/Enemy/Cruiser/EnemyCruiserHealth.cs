@@ -31,6 +31,9 @@ public class EnemyCruiserHealth : MonoBehaviour
     private Transform shipParentRoot;
 
     [SerializeField]
+    private float shipMaxHealth;
+
+    [SerializeField]
     private Transform bulletParent;
 
     [SerializeField]
@@ -90,7 +93,7 @@ public class EnemyCruiserHealth : MonoBehaviour
         }
 
         // Update and show the health bar at the top of the screen
-        if (enemyHealthBarFill != null && enemyHealthBarBackground != null)
+        else if (enemyHealthBarFill != null && enemyHealthBarBackground != null)
         {
             // Show the health bar at the top of the screen
             enemyHealthBarBackground.gameObject.SetActive(true);
@@ -178,11 +181,13 @@ public class EnemyCruiserHealth : MonoBehaviour
                 enemyShipShoot.parentRoot = bulletParent;
             }
 
-            //Assign the HealthBar to the Ship
+            //Assign the HealthBar to the Ship and ReAdapt PV in case already used Ship
             EnemyHealth enemyHealth = shipInstance.GetComponent<EnemyHealth>();
             if (enemyHealth != null)
             {
                 enemyHealth.AssignHealthBar(enemyHealthBarBackground, enemyHealthBarFill);
+                enemyHealth.SetMaxHealth(shipMaxHealth);
+                enemyHealth.SetCurrentHealth(shipMaxHealth);
             }
         }
     }

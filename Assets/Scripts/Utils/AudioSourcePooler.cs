@@ -16,7 +16,6 @@ public class AudioSourcePooler : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject); // Optionnel, pour persister à travers les scènes
         }
         else
         {
@@ -28,6 +27,7 @@ public class AudioSourcePooler : MonoBehaviour
         {
             GameObject obj = Instantiate(audioSourcePrefab);
             AudioSource audioSource = obj.GetComponent<AudioSource>();
+            audioSource.transform.SetParent(transform);
             obj.SetActive(false);
             audioSourcePool.Enqueue(audioSource);
         }
@@ -39,6 +39,7 @@ public class AudioSourcePooler : MonoBehaviour
         {
             AudioSource audioSource = audioSourcePool.Dequeue();
             audioSource.gameObject.SetActive(true);
+            audioSource.transform.SetParent(transform);
             return audioSource;
         }
         else
@@ -53,6 +54,7 @@ public class AudioSourcePooler : MonoBehaviour
     {
         audioSource.Stop(); // Arrête la lecture du son
         audioSource.gameObject.SetActive(false); // Désactive le GameObject
+        audioSource.transform.SetParent(transform);
         audioSourcePool.Enqueue(audioSource); // Retourne l'AudioSource au pool
     }
 }

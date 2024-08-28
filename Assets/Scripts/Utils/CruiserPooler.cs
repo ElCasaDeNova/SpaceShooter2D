@@ -30,6 +30,7 @@ public class CruiserPooler : MonoBehaviour
         for (int i = 0; i < initialPoolSize; i++)
         {
             GameObject cruiser = Instantiate(cruiserPrefab);
+            cruiser.transform.SetParent(transform);
             cruiser.SetActive(false);
             cruiserPool.Enqueue(cruiser);
         }

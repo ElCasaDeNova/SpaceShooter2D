@@ -72,8 +72,7 @@ public class EnemyHealth : MonoBehaviour
             currentHealth = 0;
             Die();
         }
-
-        if (enemyHealthBarFill != null && enemyHealthBarBackground != null)
+        else if (enemyHealthBarFill != null && enemyHealthBarBackground != null)
         {
             // Show the health bar
             enemyHealthBarBackground.gameObject.SetActive(true);
@@ -153,9 +152,19 @@ public class EnemyHealth : MonoBehaviour
         return currentHealth;
     }
 
+    public void SetCurrentHealth(float value)
+    {
+        currentHealth = value;
+    }
+
     public float GetMaxHealth()
     {
         return maxHealth;
+    }
+
+    public void SetMaxHealth(float value)
+    {
+        maxHealth=value;
     }
 
     public static EnemyHealth GetLastHitEnemy()

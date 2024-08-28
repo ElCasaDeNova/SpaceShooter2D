@@ -38,6 +38,7 @@ public class ShipPooler : MonoBehaviour
         for (int i = 0; i < initialPoolSize; i++)
         {
             GameObject ship = Instantiate(shipPrefab);
+            ship.transform.SetParent(transform); // Set the parent to ShipPooler
             ship.SetActive(false);
             shipPool.Enqueue(ship);
         }

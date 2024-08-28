@@ -30,6 +30,7 @@ public class MinePooler : MonoBehaviour
         for (int i = 0; i < initialPoolSize; i++)
         {
             GameObject mine = Instantiate(minePrefab);
+            mine.transform.SetParent(transform);
             mine.SetActive(false);
             minePool.Enqueue(mine);
         }
