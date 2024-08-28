@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4679994696576307498}
   - component: {fileID: 4696992994817918497}
-  - component: {fileID: 7875360841728755639}
   - component: {fileID: 8125833221752864180}
   - component: {fileID: 351995298090436815}
   - component: {fileID: 525195468944345919}
@@ -89,23 +88,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7875360841728755639
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4701777017059238958}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77409c53e454ed34bb79bb93382e65c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 200
-  enemyHealthBarBackground: {fileID: 0}
-  enemyHealthBarFill: {fileID: 0}
-  enemyHealthBarVisibleTime: 1
-  audioSource: {fileID: -8043474725868725803}
 --- !u!114 &8125833221752864180
 MonoBehaviour:
   m_ObjectHideFlags: 0

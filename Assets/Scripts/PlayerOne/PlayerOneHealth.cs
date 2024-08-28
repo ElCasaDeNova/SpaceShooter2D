@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerOneHealth : MonoBehaviour
@@ -11,6 +12,8 @@ public class PlayerOneHealth : MonoBehaviour
 
     [SerializeField]
     private Image healthBarFill;
+    [SerializeField]
+    private Image healthBarBackGround;
 
     [SerializeField]
     private AudioSource damageAudioSource;
@@ -62,32 +65,34 @@ public class PlayerOneHealth : MonoBehaviour
     {
         if (deathSound != null)
         {
-            // Create GameObject so the Enemy Destruction doesn't block or wait for the explosion sound
-            GameObject tempAudioSource = new GameObject("TempAudioSource");
-            AudioSource tempSource = tempAudioSource.AddComponent<AudioSource>();
-            tempSource.clip = deathSound;
-            tempSource.Play();
+            AudioSource audioSourceInstance = AudioSourcePooler.Instance.GetAudioSource();
+            audioSourceInstance.clip = deathSound;
+            audioSourceInstance.Play();
 
-            // Destroy GameObject when sound is done
-            Destroy(tempAudioSource, deathSound.length);
+            // Return AudioSource to pool after the sound has finished playing
+            StartCoroutine(ReturnAudioSourceToPoolAfterPlay(audioSourceInstance));
         }
 
-        Debug.Log("You are dead");
+        // Debug.Log("You are dead");
+        SceneManager.LoadScene("GameOver");
     }
 
     void UpdateHealthBar()
-    {
-        float fillAmount = currentHealth / maxHealth;
-        healthBarFill.fillAmount = fillAmount; // This updates the fill of the health bar
+    {   // Calculate the current health ratio of the last hit enemy
+        float healthRatio = currentHealth / maxHealth;
 
-        //LUMIERE ROUGE ICI
+        // Update the width of the health bar to reflect the current health of the last hit enemy
+        RectTransform rectTransform = healthBarFill.rectTransform;
+        float originalWidth = healthBarBackGround.rectTransform.sizeDelta.x;
+        rectTransform.sizeDelta = new Vector2(originalWidth * healthRatio, rectTransform.sizeDelta.y);
 
-        // Play the damage sound
+        // Play the damage sound if the audio source and sound clip are available
         if (damageAudioSource != null && damageSound != null)
         {
             damageAudioSource.PlayOneShot(damageSound);
         }
     }
+
 
     private IEnumerator FlashDamageScreen()
     {
@@ -104,5 +109,13 @@ public class PlayerOneHealth : MonoBehaviour
 
         // Image is transparent at the end
         damageFlashImage.color = new Color(damageFlashImage.color.r, damageFlashImage.color.g, damageFlashImage.color.b, 0f);
+    }
+
+    private IEnumerator ReturnAudioSourceToPoolAfterPlay(AudioSource audioSource)
+    {
+        // Wait for the duration of the clip
+        yield return new WaitForSeconds(audioSource.clip.length);
+        // Return the AudioSource to the pool
+        AudioSourcePooler.Instance.ReturnAudioSource(audioSource);
     }
 }

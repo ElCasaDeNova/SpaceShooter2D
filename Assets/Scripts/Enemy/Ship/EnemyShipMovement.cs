@@ -23,7 +23,7 @@ public class EnemyShipMovement : MonoBehaviour
         if (other.gameObject.TryGetComponent<PlayerOneHealth>(out PlayerOneHealth player))
         {
             player.TakeDamage(collisionDamage);
-            Destroy(enemyShip);
+            ShipPooler.Instance.ReturnShip(enemyShip);
         }
     }
 }

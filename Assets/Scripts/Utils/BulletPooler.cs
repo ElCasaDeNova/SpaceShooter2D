@@ -29,6 +29,7 @@ public class BulletPooler : MonoBehaviour
         for (int i = 0; i < initialPoolSize; i++)
         {
             GameObject bullet = Instantiate(bulletPrefab);
+            bullet.transform.SetParent(transform);
             bullet.SetActive(false);
             bulletPool.Enqueue(bullet);
         }

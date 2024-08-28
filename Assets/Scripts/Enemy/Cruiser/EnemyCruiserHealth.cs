@@ -31,6 +31,9 @@ public class EnemyCruiserHealth : MonoBehaviour
     private Transform shipParentRoot;
 
     [SerializeField]
+    private float shipMaxHealth;
+
+    [SerializeField]
     private Transform bulletParent;
 
     [SerializeField]
@@ -38,6 +41,7 @@ public class EnemyCruiserHealth : MonoBehaviour
 
     [SerializeField]
     private Image enemyHealthBarFill; // Health bar displayed at the top of the screen
+
 
     [SerializeField]
     private float enemyHealthBarVisibleTime = 1f; // Time the health bar will be visible at the top of the screen
@@ -49,7 +53,6 @@ public class EnemyCruiserHealth : MonoBehaviour
     [SerializeField]
     private AudioSource audioSource;
     private AudioClip explosionSound;
-
 
     // Initialize health points
     void Start()
@@ -90,7 +93,7 @@ public class EnemyCruiserHealth : MonoBehaviour
         }
 
         // Update and show the health bar at the top of the screen
-        if (enemyHealthBarFill != null && enemyHealthBarBackground != null)
+        else if (enemyHealthBarFill != null && enemyHealthBarBackground != null)
         {
             // Show the health bar at the top of the screen
             enemyHealthBarBackground.gameObject.SetActive(true);
@@ -125,18 +128,16 @@ public class EnemyCruiserHealth : MonoBehaviour
 
         if (explosionSound != null)
         {
-            // Create GameObject so the Cruiser Destruction doesn't block or wait for the explosion sound
-            GameObject tempAudioSource = new GameObject("TempAudioSource");
-            AudioSource tempSource = tempAudioSource.AddComponent<AudioSource>();
-            tempSource.clip = explosionSound;
-            tempSource.Play();
+            AudioSource audioSourceInstance = AudioSourcePooler.Instance.GetAudioSource();
+            audioSourceInstance.clip = explosionSound;
+            audioSourceInstance.Play();
 
-            // Destroy GameObject when sound is done
-            Destroy(tempAudioSource, explosionSound.length);
+            // Return AudioSource to pool after the sound has finished playing
+            StartCoroutine(ReturnAudioSourceToPoolAfterPlay(audioSourceInstance));
         }
 
         // Destroy the cruiser object
-        Destroy(gameObject);
+        CruiserPooler.Instance.ReturnCruiser(gameObject);
     }
 
     // Method to spawn ships at random positions
@@ -157,7 +158,14 @@ public class EnemyCruiserHealth : MonoBehaviour
             Transform spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
 
             // Instantiate the ship at the chosen spawn point
-            GameObject shipInstance = Instantiate(shipPrefab, spawnPoint.position, spawnPoint.rotation);
+            GameObject shipInstance = ShipPooler.Instance.GetShip();
+
+            // Set the position and rotation
+            shipInstance.transform.position = spawnPoint.position;
+            shipInstance.transform.rotation = spawnPoint.rotation;
+
+            // Set the parent
+            shipInstance.transform.SetParent(shipParentRoot);
 
             // Assign the playerOne reference to the EnemyFollow script on the ship
             EnemyFollow enemyFollow = shipInstance.GetComponent<EnemyFollow>();
@@ -166,24 +174,36 @@ public class EnemyCruiserHealth : MonoBehaviour
                 enemyFollow.playerOne = playerOne;
             }
 
-            // Assign the Ship parent to the Ship
-            shipInstance.transform.SetParent(shipParentRoot);
-
             // Assign the parent to the Ship bullets
             EnemyShipShoot enemyShipShoot = shipInstance.GetComponent<EnemyShipShoot>();
             if (enemyShipShoot != null)
             {
                 enemyShipShoot.parentRoot = bulletParent;
             }
+
+            //Assign the HealthBar to the Ship and ReAdapt PV in case already used Ship
+            EnemyHealth enemyHealth = shipInstance.GetComponent<EnemyHealth>();
+            if (enemyHealth != null)
+            {
+                enemyHealth.AssignHealthBar(enemyHealthBarBackground, enemyHealthBarFill);
+                enemyHealth.SetMaxHealth(shipMaxHealth);
+                enemyHealth.SetCurrentHealth(shipMaxHealth);
+            }
         }
     }
 
     private void UpdateHealthBar()
     {
-        if (enemyHealthBarFill != null)
+        // Check if an enemy was hit last
+        if (lastHitEnemy != null)
         {
-            float fillAmount = currentHealth / maxHealth;
-            enemyHealthBarFill.fillAmount = fillAmount;
+            // Calculate the current health ratio of the last hit enemy
+            float healthRatio = lastHitEnemy.currentHealth / lastHitEnemy.maxHealth;
+
+            // Update the width of the health bar to reflect the current health of the last hit enemy
+            RectTransform rectTransform = enemyHealthBarFill.rectTransform;
+            float originalWidth = enemyHealthBarBackground.rectTransform.sizeDelta.x;
+            rectTransform.sizeDelta = new Vector2(originalWidth * healthRatio, rectTransform.sizeDelta.y);
         }
     }
 
@@ -200,6 +220,14 @@ public class EnemyCruiserHealth : MonoBehaviour
         }
 
         isHealthBarCoroutineRunning = false;
+    }
+
+    private IEnumerator ReturnAudioSourceToPoolAfterPlay(AudioSource audioSource)
+    {
+        // Wait for the duration of the clip
+        yield return new WaitForSeconds(audioSource.clip.length);
+        // Return the AudioSource to the pool
+        AudioSourcePooler.Instance.ReturnAudioSource(audioSource);
     }
 
     public float GetCurrentHealth()
