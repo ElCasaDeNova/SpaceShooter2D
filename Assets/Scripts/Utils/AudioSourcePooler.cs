@@ -5,7 +5,7 @@ public class AudioSourcePooler : MonoBehaviour
 {
     public static AudioSourcePooler Instance;
 
-    public GameObject audioSourcePrefab; // Un prefab contenant un AudioSource
+    public GameObject audioSourcePrefab;
     public int poolSize = 10;
 
     private Queue<AudioSource> audioSourcePool = new Queue<AudioSource>();
@@ -44,7 +44,7 @@ public class AudioSourcePooler : MonoBehaviour
         }
         else
         {
-            // Optionnel: Étendre le pool si nécessaire
+         
             GameObject obj = Instantiate(audioSourcePrefab);
             return obj.GetComponent<AudioSource>();
         }
@@ -52,9 +52,9 @@ public class AudioSourcePooler : MonoBehaviour
 
     public void ReturnAudioSource(AudioSource audioSource)
     {
-        audioSource.Stop(); // Arrête la lecture du son
-        audioSource.gameObject.SetActive(false); // Désactive le GameObject
+        audioSource.Stop();
+        audioSource.gameObject.SetActive(false);
         audioSource.transform.SetParent(transform);
-        audioSourcePool.Enqueue(audioSource); // Retourne l'AudioSource au pool
+        audioSourcePool.Enqueue(audioSource);
     }
 }
