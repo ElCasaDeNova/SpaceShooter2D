@@ -5,8 +5,8 @@ public class BulletPooler : MonoBehaviour
 {
     public static BulletPooler Instance;
 
-    public GameObject bulletPrefab; // Le prefab de la balle à mettre en pool
-    public int initialPoolSize = 20; // Taille initiale du pool
+    public GameObject bulletPrefab;
+    public int initialPoolSize = 20;
 
     private Queue<GameObject> bulletPool;
 
@@ -24,7 +24,7 @@ public class BulletPooler : MonoBehaviour
 
     private void Start()
     {
-        // Initialisation du pool
+
         bulletPool = new Queue<GameObject>();
         for (int i = 0; i < initialPoolSize; i++)
         {
@@ -45,7 +45,6 @@ public class BulletPooler : MonoBehaviour
         }
         else
         {
-            // Optionnel : Créer un nouvel objet si le pool est vide
             GameObject bullet = Instantiate(bulletPrefab);
             return bullet;
         }
