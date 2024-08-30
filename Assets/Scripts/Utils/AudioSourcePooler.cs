@@ -46,6 +46,7 @@ public class AudioSourcePooler : MonoBehaviour
         {
          
             GameObject obj = Instantiate(audioSourcePrefab);
+            audioSourcePrefab.transform.SetParent(transform);
             return obj.GetComponent<AudioSource>();
         }
     }

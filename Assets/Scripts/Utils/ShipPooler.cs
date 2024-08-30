@@ -56,6 +56,7 @@ public class ShipPooler : MonoBehaviour
         {
             // Optionally create a new ship if the pool is empty
             GameObject ship = Instantiate(shipPrefab);
+            ship.transform.SetParent(transform);
             return ship;
         }
     }

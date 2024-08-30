@@ -48,6 +48,7 @@ public class MinePooler : MonoBehaviour
         {
             // Optionally create a new mine if the pool is empty
             GameObject mine = Instantiate(minePrefab);
+            mine.transform.SetParent(transform);
             return mine;
         }
     }
