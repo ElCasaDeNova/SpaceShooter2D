@@ -48,6 +48,7 @@ public class CruiserPooler : MonoBehaviour
         {
             // Optionally create a new cruiser if the pool is empty
             GameObject cruiser = Instantiate(cruiserPrefab);
+            cruiser.transform.SetParent(transform);
             return cruiser;
         }
     }

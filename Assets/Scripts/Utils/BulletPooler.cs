@@ -46,6 +46,7 @@ public class BulletPooler : MonoBehaviour
         else
         {
             GameObject bullet = Instantiate(bulletPrefab);
+            bullet.transform.SetParent(transform);
             return bullet;
         }
     }
